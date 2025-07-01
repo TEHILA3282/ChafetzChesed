@@ -1,0 +1,60 @@
+/* עיצוב כולל לטופס */
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+  direction: rtl;
+
+  mat-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+  }
+}
+
+/* עיצוב לרשת שדות */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* עיצוב לשורת שליחה */
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* עיצוב כותרת הרשמה */
+.header {
+  text-align: center;
+  margin-top: 2rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+
+  .sub {
+    margin-top: 0.5rem;
+    color: #4caf50;
+    font-weight: 500;
+
+    a {
+      text-decoration: underline;
+      color: #388e3c;
+    }
+  }
+}
+
+/* סגנון מותאם לשדות חובה */
+::ng-deep .mat-form-field-required-marker {
+  color: red;
+}

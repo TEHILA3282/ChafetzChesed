@@ -1,0 +1,80 @@
+<div class="header">
+  <h1>הרשמה לקופת הגמ"ח</h1>
+  <p class="sub">משתמש קיים? <a href="/login">לחץ להתחברות</a></p>
+</div>
+
+<div class="form-container">
+  <mat-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-grid">
+        <mat-form-field>
+          <mat-label>שם פרטי</mat-label>
+          <input matInput formControlName="FirstName" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>שם משפחה</mat-label>
+          <input matInput formControlName="LastName" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>תעודת זהות</mat-label>
+          <input matInput formControlName="ID" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>טלפון</mat-label>
+          <input matInput formControlName="PhoneNumber" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>נייד</mat-label>
+          <input matInput formControlName="LandlineNumber" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>אימייל</mat-label>
+          <input matInput formControlName="Email" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>סטטוס</mat-label>
+          <mat-select formControlName="PersonalStatus" required>
+            <mat-option *ngFor="let s of statuses" [value]="s">{{ s }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>תאריך לידה</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="DateOfBirth" required />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>עיר</mat-label>
+          <input matInput formControlName="City" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>רחוב</mat-label>
+          <input matInput formControlName="Street" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>מספר בית</mat-label>
+          <input matInput formControlName="HouseNumber" required />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>סיסמה</mat-label>
+          <input matInput type="password" formControlName="Password" required />
+        </mat-form-field>
+      </div>
+
+      <div class="submit-container">
+        <button mat-raised-button color="primary" type="submit">שלח טופס</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

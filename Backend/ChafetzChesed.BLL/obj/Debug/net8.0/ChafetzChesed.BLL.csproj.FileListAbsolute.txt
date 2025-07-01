@@ -1,0 +1,16 @@
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\bin\Debug\net8.0\ChafetzChesed.BLL.deps.json
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\bin\Debug\net8.0\ChafetzChesed.BLL.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\bin\Debug\net8.0\ChafetzChesed.BLL.pdb
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\bin\Debug\net8.0\ChafetzChesed.DAL.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\bin\Debug\net8.0\ChafetzChesed.DAL.pdb
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.csproj.AssemblyReference.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.AssemblyInfoInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.AssemblyInfo.cs
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.csproj.CoreCompileInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.sourcelink.json
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzC.952CE494.Up2Date
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\refint\ChafetzChesed.BLL.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ChafetzChesed.BLL.pdb
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.BLL\obj\Debug\net8.0\ref\ChafetzChesed.BLL.dll
