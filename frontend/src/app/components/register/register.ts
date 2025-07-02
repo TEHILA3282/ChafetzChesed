@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {
   MatFormFieldModule,
@@ -44,33 +44,46 @@ export class Register {
 
   constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
     this.form = this.fb.group({
-      FirstName: ['', Validators.required],
-      LastName: ['', Validators.required],
-      ID: ['', Validators.required],
-      PhoneNumber: [''],
-      LandlineNumber: [''],
+      FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
+      LastName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
+      ID: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      PhoneNumber: ['', [Validators.pattern(/^\d{9,10}$/)]],
+      LandlineNumber: ['', [Validators.pattern(/^\d{9}$/)]],
       Email: ['', [Validators.required, Validators.email]],
-      DateOfBirth: ['', Validators.required],
+      DateOfBirth: ['', [Validators.required, this.noFutureDateValidator]],
       PersonalStatus: ['', Validators.required],
-      City: ['', Validators.required],
-      Street: ['', Validators.required],
-      HouseNumber: ['', Validators.required],
-      Password: ['', Validators.required],
+      City: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
+      Street: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
+      HouseNumber: ['', [Validators.required, Validators.pattern(/^\d+[א-ת]?[a-zA-Z]?$/)]],
+      Password: ['', [
+        Validators.required,
+        Validators.minLength(8),
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/)
+      ]],
       RegistrationStatus: ['ממתין'],
       StatusUpdatedAt: [new Date()]
     });
   }
 
+  noFutureDateValidator(control: AbstractControl): ValidationErrors | null {
+    const inputDate = new Date(control.value);
+    const today = new Date();
+    return inputDate > today ? { futureDate: true } : null;
+  }
+
   onSubmit() {
-    if (this.form.valid) {
-      this.registrationService.register(this.form.value).subscribe({
-        next: (res) => {
-          console.log('נרשמת בהצלחה', res);
-        },
-        error: (err) => {
-          console.error('שגיאה בהרשמה', err);
-        }
-      });
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
     }
+
+    this.registrationService.register(this.form.value).subscribe({
+      next: (res) => {
+        console.log('נרשמת בהצלחה', res);
+      },
+      error: (err) => {
+        console.error('שגיאה בהרשמה', err);
+      }
+    });
   }
 }

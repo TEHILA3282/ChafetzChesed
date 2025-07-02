@@ -37,6 +37,14 @@ namespace ChafetzChesed.Controllers
         [HttpPost]
         public async Task<ActionResult<Registration>> Add([FromBody] Registration registration)
         {
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage);
+                return BadRequest("Validation failed: " + string.Join("; ", errors));
+            }
+
             try
             {
                 var added = await _service.AddAsync(registration);
@@ -44,7 +52,7 @@ namespace ChafetzChesed.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Exception: " + ex.Message);
             }
         }
 

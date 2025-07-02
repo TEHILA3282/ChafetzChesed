@@ -1,0 +1,12 @@
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\bin\Debug\net8.0\ChafetzChesed.Common.deps.json
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\bin\Debug\net8.0\ChafetzChesed.Common.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\bin\Debug\net8.0\ChafetzChesed.Common.pdb
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.AssemblyInfoInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.AssemblyInfo.cs
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.csproj.CoreCompileInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.sourcelink.json
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\refint\ChafetzChesed.Common.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ChafetzChesed.Common.pdb
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed.Common\obj\Debug\net8.0\ref\ChafetzChesed.Common.dll

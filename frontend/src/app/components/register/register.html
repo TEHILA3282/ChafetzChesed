@@ -10,31 +10,41 @@
         <mat-form-field>
           <mat-label>שם פרטי</mat-label>
           <input matInput formControlName="FirstName" required />
+          <mat-error *ngIf="form.get('FirstName')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('FirstName')?.hasError('pattern')">הכנס שם חוקי בלבד</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>שם משפחה</mat-label>
           <input matInput formControlName="LastName" required />
+          <mat-error *ngIf="form.get('LastName')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('LastName')?.hasError('pattern')">הכנס שם חוקי בלבד</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>תעודת זהות</mat-label>
           <input matInput formControlName="ID" required />
+          <mat-error *ngIf="form.get('ID')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('ID')?.hasError('pattern')">מספר ת"ז לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>טלפון</mat-label>
           <input matInput formControlName="PhoneNumber" />
+          <mat-error *ngIf="form.get('PhoneNumber')?.hasError('pattern')">מספר טלפון לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>נייד</mat-label>
           <input matInput formControlName="LandlineNumber" />
+          <mat-error *ngIf="form.get('LandlineNumber')?.hasError('pattern')">מספר נייד לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>אימייל</mat-label>
           <input matInput formControlName="Email" required />
+          <mat-error *ngIf="form.get('Email')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('Email')?.hasError('email')">כתובת אימייל לא תקינה</mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -42,6 +52,7 @@
           <mat-select formControlName="PersonalStatus" required>
             <mat-option *ngFor="let s of statuses" [value]="s">{{ s }}</mat-option>
           </mat-select>
+          <mat-error *ngIf="form.get('PersonalStatus')?.hasError('required')">יש לבחור סטטוס</mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -49,26 +60,37 @@
           <input matInput [matDatepicker]="picker" formControlName="DateOfBirth" required />
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="form.get('DateOfBirth')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('DateOfBirth')?.hasError('futureDate')">תאריך לא יכול להיות בעתיד</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>עיר</mat-label>
           <input matInput formControlName="City" required />
+          <mat-error *ngIf="form.get('City')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('City')?.hasError('pattern')">שם עיר לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>רחוב</mat-label>
           <input matInput formControlName="Street" required />
+          <mat-error *ngIf="form.get('Street')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('Street')?.hasError('pattern')">שם רחוב לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>מספר בית</mat-label>
           <input matInput formControlName="HouseNumber" required />
+          <mat-error *ngIf="form.get('HouseNumber')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('HouseNumber')?.hasError('pattern')">מספר בית לא תקין</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <mat-label>סיסמה</mat-label>
           <input matInput type="password" formControlName="Password" required />
+          <mat-error *ngIf="form.get('Password')?.hasError('required')">שדה חובה</mat-error>
+          <mat-error *ngIf="form.get('Password')?.hasError('minlength')">לפחות 8 תווים</mat-error>
+          <mat-error *ngIf="form.get('Password')?.hasError('pattern')">יש לכלול אותיות וספרות</mat-error>
         </mat-form-field>
       </div>
 

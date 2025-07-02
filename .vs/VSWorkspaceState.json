@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Backend",
+    "\\Backend\\ChafetzChesed"
   ],
+  "SelectedNode": "\\Backend\\ChafetzChesed\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }

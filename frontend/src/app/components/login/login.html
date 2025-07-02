@@ -20,12 +20,17 @@
       </button>
     </mat-form-field>
 
+    <!-- הודעת שגיאה אם קיימת -->
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
     <div class="submit-container">
       <button mat-raised-button color="primary" type="submit">כניסה</button>
     </div>
 
     <div class="sub">
-<button mat-button (click)="openForgotPassword()">שכחתי סיסמא</button>
+      <button mat-button (click)="openForgotPassword()">שכחתי סיסמא</button>
     </div>
   </form>
 </div>
