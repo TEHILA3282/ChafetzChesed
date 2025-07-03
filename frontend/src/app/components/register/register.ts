@@ -60,9 +60,10 @@ export class Register {
         Validators.minLength(8),
         Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/)
       ]],
+      ConfirmPassword: ['', Validators.required],
       RegistrationStatus: ['ממתין'],
       StatusUpdatedAt: [new Date()]
-    });
+    }, { validators: this.passwordsMatchValidator });
   }
 
   noFutureDateValidator(control: AbstractControl): ValidationErrors | null {
@@ -71,13 +72,21 @@ export class Register {
     return inputDate > today ? { futureDate: true } : null;
   }
 
+  passwordsMatchValidator(group: AbstractControl): ValidationErrors | null {
+    const password = group.get('Password')?.value;
+    const confirm = group.get('ConfirmPassword')?.value;
+    return password === confirm ? null : { passwordsMismatch: true };
+  }
+
   onSubmit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-    this.registrationService.register(this.form.value).subscribe({
+    const { ConfirmPassword, ...formData } = this.form.value;
+
+    this.registrationService.register(formData).subscribe({
       next: (res) => {
         console.log('נרשמת בהצלחה', res);
       },

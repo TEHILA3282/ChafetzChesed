@@ -178,3 +178,6 @@ C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.pdb
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.genruntimeconfig.cache
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ref\ChafetzChesed.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\SendGrid.dll
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\StarkbankEcdsa.dll

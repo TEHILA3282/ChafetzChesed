@@ -16,9 +16,14 @@ export class AuthService {
       password: credentials.password
     }).pipe(
       tap((res: any) => {
-        // שומרים את הטוקן ב־localStorage
+        // שמירה של הטוקן והמשתמש
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
+
+        // שמירה נפרדת של השם הפרטי
+        if (res.user?.firstName) {
+          localStorage.setItem('userName', res.user.firstName);
+        }
       })
     );
   }
@@ -26,6 +31,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('userName');
   }
 
   isLoggedIn(): boolean {
