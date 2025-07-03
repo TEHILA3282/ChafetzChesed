@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="nav-links">
+    <a routerLink="/home" routerLinkActive="active">ראשי</a>
+    <a routerLink="/messages" routerLinkActive="active">תיבת הודעות</a>
+    <a routerLink="/actions" routerLinkActive="active">ביצוע פעולות</a>
+    <a routerLink="/account" routerLinkActive="active">מצב החשבון</a>
+  </div>
+
+  <div class="auth-section">
+    <ng-container *ngIf="!isLoggedIn; else loggedIn">
+     <a routerLink="/login" role="button" tabindex="0">כניסה</a> |
+<a routerLink="/register" role="button" tabindex="0">הרשמה</a>
+
+    </ng-container>
+
+    <ng-template #loggedIn>
+      <span>שלום, {{ userName }}</span> |
+      <a (click)="logout()">התנתקות</a>
+    </ng-template>
+  </div>
+</nav>

@@ -5,7 +5,7 @@ namespace ChafetzChesed.DAL.Entities
     public class Loan
     {
         public int ID { get; set; }
-        public string ClientID { get; set; } = string.Empty; // ÷éùåø ì-Registration
+        public string ClientID { get; set; } = string.Empty; // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½-Registration
         public int LoanTypeID { get; set; }
         public DateTime LoanDate { get; set; }
         public decimal Amount { get; set; }
@@ -13,7 +13,7 @@ namespace ChafetzChesed.DAL.Entities
         public string Purpose { get; set; } = string.Empty;
         public string? PurposeDetails { get; set; }
 
-        // ÷ùøéí (ø÷ àí àú îùúîùú á-Navigation Properties)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½-Navigation Properties)
         public Registration? Client { get; set; }
         public LoanType? LoanType { get; set; }
     }

@@ -16,6 +16,342 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ChafetzChesed.Controllers.DepositsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Deposits",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositsController",
+    "Method": "Create",
+    "RelativePath": "api/Deposits",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deposit",
+        "Type": "ChafetzChesed.DAL.Entities.Deposit",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositsController",
+    "Method": "Update",
+    "RelativePath": "api/Deposits",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deposit",
+        "Type": "ChafetzChesed.DAL.Entities.Deposit",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositsController",
+    "Method": "GetById",
+    "RelativePath": "api/Deposits/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositsController",
+    "Method": "Delete",
+    "RelativePath": "api/Deposits/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositTypesController",
+    "Method": "GetAll",
+    "RelativePath": "api/DepositTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ChafetzChesed.DAL.Entities.DepositType, ChafetzChesed.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositTypesController",
+    "Method": "Create",
+    "RelativePath": "api/DepositTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "depositType",
+        "Type": "ChafetzChesed.DAL.Entities.DepositType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ChafetzChesed.DAL.Entities.DepositType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositTypesController",
+    "Method": "Update",
+    "RelativePath": "api/DepositTypes",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "depositType",
+        "Type": "ChafetzChesed.DAL.Entities.DepositType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ChafetzChesed.DAL.Entities.DepositType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositTypesController",
+    "Method": "GetById",
+    "RelativePath": "api/DepositTypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ChafetzChesed.DAL.Entities.DepositType",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.DepositTypesController",
+    "Method": "Delete",
+    "RelativePath": "api/DepositTypes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoansController",
+    "Method": "GetAll",
+    "RelativePath": "api/Loans",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoansController",
+    "Method": "Create",
+    "RelativePath": "api/Loans",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loan",
+        "Type": "ChafetzChesed.DAL.Entities.Loan",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoansController",
+    "Method": "Update",
+    "RelativePath": "api/Loans",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loan",
+        "Type": "ChafetzChesed.DAL.Entities.Loan",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoansController",
+    "Method": "GetById",
+    "RelativePath": "api/Loans/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoansController",
+    "Method": "Delete",
+    "RelativePath": "api/Loans/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoanTypesController",
+    "Method": "GetAll",
+    "RelativePath": "api/LoanTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoanTypesController",
+    "Method": "Create",
+    "RelativePath": "api/LoanTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loanType",
+        "Type": "ChafetzChesed.DAL.Entities.LoanType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoanTypesController",
+    "Method": "Update",
+    "RelativePath": "api/LoanTypes",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loanType",
+        "Type": "ChafetzChesed.DAL.Entities.LoanType",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoanTypesController",
+    "Method": "GetById",
+    "RelativePath": "api/LoanTypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.LoanTypesController",
+    "Method": "Delete",
+    "RelativePath": "api/LoanTypes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ChafetzChesed.Controllers.RegistrationController",
     "Method": "GetAll",
     "RelativePath": "api/Registration",
