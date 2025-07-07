@@ -7,6 +7,8 @@ import { AuthGuard } from './guards/auth-guard';
 import { ActionsComponent } from './components/actions/actions';
 import { AccountComponent } from './components/account/account';
 import { MessagesBoxComponent } from './components/messages-box/messages-box';
+import { MessagesComponent } from './components/messages/messages';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +17,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
     { path: 'messages', component: MessagesBoxComponent, canActivate: [AuthGuard] },
+
 
   { path: 'actions', component: ActionsComponent, canActivate: [AuthGuard] },
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard] }

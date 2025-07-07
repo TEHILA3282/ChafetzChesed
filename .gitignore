@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ignore build results
 bin/
 obj/
@@ -50,3 +51,23 @@ pnpm-debug.log*
 # OS generated files
 .DS_Store
 Thumbs.db
+=======
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Angular
+node_modules/
+dist/
+.env
+>>>>>>> d504a9e75793809c302a48fa632cc2695a4e754e
