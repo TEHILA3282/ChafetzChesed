@@ -6,7 +6,7 @@ namespace ChafetzChesed.DAL.Entities
     public class Registration
     {
         [Key]
-        [StringLength(9)]
+        [StringLength(9, ErrorMessage = "תעודת זהות צריכה להכיל 9 ספרות")]
         public string ID { get; set; }
 
         [Required]
@@ -23,8 +23,9 @@ namespace ChafetzChesed.DAL.Entities
         [StringLength(15)]
         public string LandlineNumber { get; set; }
 
-        [StringLength(100)]
+        [Required]
         [EmailAddress]
+        [StringLength(100)]
         public string Email { get; set; }
 
         [DataType(DataType.Date)]
@@ -42,13 +43,18 @@ namespace ChafetzChesed.DAL.Entities
         [StringLength(10)]
         public string HouseNumber { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string Password { get; set; }
 
-        [StringLength(10)]
-        public string RegistrationStatus { get; set; }
+        [StringLength(20)]
+        public string RegistrationStatus { get; set; } = "ממתין";
 
         [DataType(DataType.Date)]
         public DateTime? StatusUpdatedAt { get; set; }
+
+        public int InstitutionId { get; set; }
+        public Institution? Institution { get; set; }
+        public string Role { get; set; } = "User";
     }
 }

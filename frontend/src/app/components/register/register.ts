@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import {
   MatFormFieldModule,
   MAT_FORM_FIELD_DEFAULT_OPTIONS
@@ -13,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrationService } from '../../services/registration.service';
+import { institutionMap } from '../../institution-map';
 
 @Component({
   selector: 'app-register',
@@ -41,15 +44,26 @@ import { RegistrationService } from '../../services/registration.service';
 export class Register {
   form: FormGroup;
   statuses = ['רווק/ה', 'נשוי/ה', 'גרוש/ה', 'אלמן/ה'];
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private registrationService: RegistrationService) {
+  constructor(
+    private fb: FormBuilder,
+    private registrationService: RegistrationService,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    const hostname = window.location.hostname;
+    const subdomain = hostname.includes('localhost') ? 'localhost' : hostname.split('.')[0];
+    const institutionId = institutionMap[subdomain] || 0;
+
     this.form = this.fb.group({
       FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
       LastName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
       ID: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-      PhoneNumber: ['', [Validators.pattern(/^\d{9,10}$/)]],
-      LandlineNumber: ['', [Validators.pattern(/^\d{9}$/)]],
+    PhoneNumber:  ['', [Validators.pattern(/^\d{9}$/)]],
+    LandlineNumber: ['', [Validators.pattern(/^\d{10}$/)]],
       Email: ['', [Validators.required, Validators.email]],
+      Role: ['User'],
       DateOfBirth: ['', [Validators.required, this.noFutureDateValidator]],
       PersonalStatus: ['', Validators.required],
       City: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
@@ -62,7 +76,8 @@ export class Register {
       ]],
       ConfirmPassword: ['', Validators.required],
       RegistrationStatus: ['ממתין'],
-      StatusUpdatedAt: [new Date()]
+      StatusUpdatedAt: [new Date()],
+      InstitutionId: [institutionId]
     }, { validators: this.passwordsMatchValidator });
   }
 
@@ -86,13 +101,28 @@ export class Register {
 
     const { ConfirmPassword, ...formData } = this.form.value;
 
-    this.registrationService.register(formData).subscribe({
-      next: (res) => {
-        console.log('נרשמת בהצלחה', res);
-      },
-      error: (err) => {
-        console.error('שגיאה בהרשמה', err);
-      }
-    });
+    this.registrationService.checkEmailOrIdExists(formData.Email, formData.ID, formData.InstitutionId)
+      .subscribe({
+        next: (exists: boolean) => {
+          if (exists) {
+            this.errorMessage = 'משתמש עם כתובת מייל או תעודת זהות זו כבר קיים במערכת';
+            return;
+          }
+
+          this.registrationService.register(formData).subscribe({
+            next: (res) => {
+              console.log('נרשמת בהצלחה', res);
+              this.router.navigate(['/login']);
+            },
+            error: (err) => {
+              console.error('שגיאה בהרשמה', err);
+              this.errorMessage = 'ארעה שגיאה במהלך ההרשמה';
+            }
+          });
+        },
+        error: () => {
+          this.errorMessage = 'שגיאה בבדיקת תקינות המידע';
+        }
+      });
   }
 }

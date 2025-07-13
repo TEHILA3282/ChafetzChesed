@@ -1,0 +1,4 @@
+CREATE TABLE Institutions (
+    Id INT PRIMARY KEY IDENTITY,
+    Name NVARCHAR(100) NOT NULL
+);

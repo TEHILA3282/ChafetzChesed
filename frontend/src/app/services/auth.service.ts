@@ -1,3 +1,4 @@
+// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
@@ -10,17 +11,15 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(credentials: { emailOrId: string, password: string }): Observable<any> {
+  login(credentials: { emailOrId: string, password: string, institutionId: number }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, {
-      identifier: credentials.emailOrId,
-      password: credentials.password
+      identifier: credentials.emailOrId,     
+      password: credentials.password,
+      institutionId: credentials.institutionId
     }).pipe(
       tap((res: any) => {
-        // שמירה של הטוקן והמשתמש
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', JSON.stringify(res.user));
-
-        // שמירה נפרדת של השם הפרטי
         if (res.user?.firstName) {
           localStorage.setItem('userName', res.user.firstName);
         }
@@ -40,5 +39,10 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  getCurrentUser() {
+    const userJson = localStorage.getItem('user');
+    return userJson ? JSON.parse(userJson) : null;
   }
 }

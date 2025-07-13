@@ -114,6 +114,9 @@
       <div class="submit-container">
         <button mat-raised-button color="primary" type="submit">שלח טופס</button>
       </div>
+      <div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
     </form>
   </mat-card>
 </div>

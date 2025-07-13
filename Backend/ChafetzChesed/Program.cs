@@ -10,10 +10,11 @@ using ChafetzChesed.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+// טעינת הגדרות JWT
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
 
+// הגדרת אימות JWT
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -33,6 +34,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// CORS לאנגולאר
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost4200", policy =>
@@ -43,9 +45,20 @@ builder.Services.AddCors(options =>
     });
 });
 
+// הוספת HttpClient לתמיכה בשירותים חיצוניים
+builder.Services.AddHttpClient(); // ← שורה חשובה לתיקון השגיאה שלך
+
+// רישום שירותים
 builder.Services.AddScoped<IRegistrationService, RegistrationService>();
+builder.Services.AddScoped<IDepositTypeService, DepositTypeService>();
+builder.Services.AddScoped<ILoanTypeService, LoanTypeService>();
+builder.Services.AddScoped<ILoanService, LoanService>();
+builder.Services.AddScoped<IDepositService, DepositService>();
+builder.Services.AddScoped<IExternalFormService, ExternalFormService>();
+builder.Services.AddScoped<IExternalUserSyncService, ExternalUserSyncService>();
 builder.Services.AddScoped<JwtService>();
 
+// חיבור למסד הנתונים
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -53,23 +66,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
-
-
-builder.Services.AddScoped<IRegistrationService, RegistrationService>();
-builder.Services.AddScoped<IDepositTypeService, DepositTypeService>();
-builder.Services.AddScoped<ILoanTypeService, LoanTypeService>();
-builder.Services.AddScoped<ILoanService, LoanService>();
-builder.Services.AddScoped<IDepositService, DepositService>();
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 
 if (app.Environment.IsDevelopment())
 {
@@ -77,12 +79,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 
-app.UseCors("AllowLocalhost4200"); 
-app.UseAuthentication();           
+app.UseHttpsRedirection();
+app.UseCors("AllowLocalhost4200");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();
