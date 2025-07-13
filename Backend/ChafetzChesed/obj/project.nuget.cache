@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iNy5WdF7OzI=",
+  "dgSpecHash": "DDZGoxwmAgo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\ChafetzChesed.csproj",
+  "projectFilePath": "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\ChafetzChesed.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\משתמש\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\משתמש\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

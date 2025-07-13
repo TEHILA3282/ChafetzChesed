@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ import { Router } from '@angular/router';
     MatIconModule,
     MatDialogModule,
     ReactiveFormsModule,
-    ForgotPassword
+    ForgotPassword,
+    RouterModule
   ],
   templateUrl: './login.html',
   styleUrls: ['./login.scss']
@@ -45,19 +47,34 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.form.valid) {
+      const hostname = window.location.hostname;
+      const subdomain = hostname.includes('localhost') ? 'localhost' : hostname.split('.')[0];
+      const institutionId = 1; 
+
       const credentials = {
         emailOrId: this.form.value.emailOrId,
-        password: this.form.value.password
+        password: this.form.value.password,
+        institutionId
       };
 
+      console.log('נשלח לשרת:', credentials);
+
       this.authService.login(credentials).subscribe({
-        next: () => {
-          console.log('התחברות הצליחה');
-          this.router.navigate(['/home']); 
+        next: (res) => {
+          console.log('מה הגיע מהשרת:', res);
+          const role = res.user?.role;
+          if (role === 'Admin') {
+            this.router.navigate(['/admin']);
+          } else {
+            this.router.navigate(['/home']);
+          }
         },
         error: (err: any) => {
           console.error('שגיאה בהתחברות', err);
-          this.errorMessage = err.error || 'כתובת מייל/ת"ז או סיסמה שגויים';
+          this.errorMessage =
+            typeof err.error?.message === 'string'
+              ? err.error.message
+              : 'כתובת מייל/ת"ז או סיסמה שגויים';
         }
       });
     }
