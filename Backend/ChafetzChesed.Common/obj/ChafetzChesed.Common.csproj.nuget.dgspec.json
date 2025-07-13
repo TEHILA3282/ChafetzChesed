@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj": {}
+    "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj": {}
   },
   "projects": {
-    "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj": {
+    "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
+        "projectUniqueName": "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
         "projectName": "ChafetzChesed.Common",
-        "projectPath": "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
+        "projectPath": "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
         "packagesPath": "C:\\Users\\משתמש\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\obj\\",
+        "outputPath": "C:\\Users\\משתמש\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
