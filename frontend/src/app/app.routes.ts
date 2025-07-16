@@ -6,6 +6,7 @@ import { AuthGuard } from './guards/auth-guard';
 import { MessagesComponent } from './components/messages/messages';
 import { ActionsComponent } from './components/actions/actions';
 import { AccountComponent } from './components/account/account';
+import { DepositComponent } from './components/deposit/deposit';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,8 +14,10 @@ export const routes: Routes = [
   { path: 'register', component: Register },
   { path: 'home', component: HomeComponent },
 
-    { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
+  { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
   { path: 'actions', component: ActionsComponent, canActivate: [AuthGuard] },
-  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] }
+  { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
+  { path: 'deposit', component: DepositComponent },
+
 ];
 
