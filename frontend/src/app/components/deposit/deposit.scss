@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  max-width: 500px;
+  margin: auto;
+  padding: 1rem;
+}
+
+mat-form-field {
+  margin-bottom: 1rem;
+}
+* {
+  direction: rtl;         /* מגדיר כיוון טקסט מימין לשמאל */
+  text-align: right;      /* מיישר טקסט לימין */
+}
