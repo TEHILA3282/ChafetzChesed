@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';  // צריך לייבא את זה
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -15,7 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   styleUrls: ['./deposit.scss'],
   standalone: true,
   imports: [
-    CommonModule,         // הוסף את זה!
+    CommonModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,

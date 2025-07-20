@@ -2,8 +2,6 @@
 using ChafetzChesed.DAL.Data;
 using ChafetzChesed.DAL.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace ChafetzChesed.BLL.Services
 {
@@ -28,14 +26,6 @@ namespace ChafetzChesed.BLL.Services
 
         public async Task<Registration> AddAsync(Registration registration)
         {
-            ValidateRegistration(registration);
-
-            if (await _context.Registrations.AnyAsync(r => r.ID == registration.ID))
-                throw new Exception("User with this ID already exists.");
-
-            registration.Password = HashPassword(registration.Password);
-            registration.StatusUpdatedAt = DateTime.Now;
-
             _context.Registrations.Add(registration);
             await _context.SaveChangesAsync();
             return registration;
@@ -43,55 +33,43 @@ namespace ChafetzChesed.BLL.Services
 
         public async Task<bool> UpdateAsync(Registration registration)
         {
-            var existing = await _context.Registrations.FindAsync(registration.ID);
-            if (existing == null)
-                return false;
-
-            existing.FirstName = registration.FirstName;
-            existing.LastName = registration.LastName;
-            existing.PhoneNumber = registration.PhoneNumber;
-            existing.LandlineNumber = registration.LandlineNumber;
-            existing.Email = registration.Email;
-            existing.DateOfBirth = registration.DateOfBirth;
-            existing.PersonalStatus = registration.PersonalStatus;
-            existing.Street = registration.Street;
-            existing.City = registration.City;
-            existing.HouseNumber = registration.HouseNumber;
-            existing.RegistrationStatus = registration.RegistrationStatus;
-            existing.StatusUpdatedAt = DateTime.Now;
-
-            await _context.SaveChangesAsync();
-            return true;
+            _context.Registrations.Update(registration);
+            return await _context.SaveChangesAsync() > 0;
         }
 
         public async Task<bool> DeleteAsync(string id)
         {
-            var registration = await _context.Registrations.FindAsync(id);
-            if (registration == null)
-                return false;
+            var reg = await _context.Registrations.FindAsync(id);
+            if (reg == null) return false;
 
-            _context.Registrations.Remove(registration);
-            await _context.SaveChangesAsync();
-            return true;
+            _context.Registrations.Remove(reg);
+            return await _context.SaveChangesAsync() > 0;
         }
 
-        private void ValidateRegistration(Registration r)
+        public async Task<List<Registration>> GetPendingAsync(int institutionId)
         {
-            if (string.IsNullOrWhiteSpace(r.ID) || r.ID.Length != 9)
-                throw new Exception("Invalid ID – must be 9 digits.");
-            if (string.IsNullOrWhiteSpace(r.FirstName))
-                throw new Exception("First name is required.");
-            if (string.IsNullOrWhiteSpace(r.LastName))
-                throw new Exception("Last name is required.");
-            if (string.IsNullOrWhiteSpace(r.Password) || r.Password.Length < 6)
-                throw new Exception("Password is required and must be at least 6 characters.");
+            return await _context.Registrations
+                .Where(r => r.RegistrationStatus == "ממתין" && r.InstitutionId == institutionId)
+                .ToListAsync();
         }
 
-        private string HashPassword(string password)
+        public async Task<bool> UpdateStatusAsync(string registrationId, string newStatus)
         {
-            using var sha256 = SHA256.Create();
-            byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-            return Convert.ToBase64String(bytes);
+            var user = await _context.Registrations.FindAsync(registrationId);
+            if (user == null) return false;
+
+            user.RegistrationStatus = newStatus;
+            _context.Registrations.Update(user);
+            return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<bool> ExistsAsync(string email, string id, int institutionId)
+        {
+            var all = await GetAllAsync(); 
+            return all.Any(r =>
+                r.InstitutionId == institutionId &&
+                (r.Email == email || r.ID == id) &&
+                r.RegistrationStatus != "נדחה"
+            );
         }
     }
 }
