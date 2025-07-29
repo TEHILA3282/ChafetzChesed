@@ -1,20 +1,22 @@
-<!-- 🔷 סרגל עליון -->
-<div class="top-bar-container">
-  <div class="arrow">&#8592;</div>
+<div class="home-main-wrapper">
+  <div class="top-bar-container">
+    <div class="info-box" (click)="goTo('/info')">
+      <mat-icon class="icon">info</mat-icon>
+      <div class="info-title">חשוב לדעת</div>
+      <div class="info-sub">הסבר בנקודות<br />איך פועלת הקופה</div>
+    </div>
 
-  <div class="info-box" (click)="goTo('/info')">
-    <div class="info-sub">הסבר בנקודות<br />איך פועלת הקופה</div>
-    <div class="info-title">חשוב לדעת</div>
-  </div>
+    <div class="info-box" (click)="goTo('/programs')">
+      <mat-icon class="icon">volunteer_activism</mat-icon>
+      <div class="info-title">תוכניות ושותפים</div>
+      <div class="info-sub">תכניות נישואי ילדים,<br />הפקדות, שותפים והלוואות</div>
+    </div>
 
-  <div class="info-box" (click)="goTo('/programs')">
-    <div class="info-sub">תכניות נישואי ילדים,<br />הפקדות, שותפים והלוואות</div>
-    <div class="info-title">תוכניות ושותפים</div>
-  </div>
-
-  <div class="info-box" (click)="goTo('/contact')">
-    <div class="info-sub">תוכלו לקבל גם מענה<br />אישי דרך הטלפון</div>
-    <div class="info-title">יצירת קשר</div>
+    <div class="info-box" (click)="goTo('/contact')">
+      <mat-icon class="icon">call</mat-icon>
+      <div class="info-title">יצירת קשר</div>
+      <div class="info-sub">תוכלו לקבל גם מענה<br />אישי דרך הטלפון</div>
+    </div>
   </div>
 
   <div class="search-wrapper">
@@ -23,25 +25,10 @@
       [(ngModel)]="searchTerm"
       (input)="onSearch()"
       (keyup.enter)="onSearch()"
-      placeholder="...חיפוש"
+      placeholder="מה תרצה לחפש היום?"
     />
-    <button (click)="onSearch()">
+    <button (click)="onSearch()" aria-label="חפש">
       <mat-icon>search</mat-icon>
     </button>
-  </div>
-</div>
-
-<!-- 🔎 תוצאות חיפוש -->
-<div class="results">
-  <div
-    class="result-item"
-    *ngFor="let result of filteredResults"
-    (click)="navigateTo(result)"
-  >
-    {{ result.title }}
-  </div>
-
-  <div *ngIf="searchTerm && filteredResults.length === 0" class="no-results">
-    לא נמצאו תוצאות עבור "{{ searchTerm }}"
   </div>
 </div>

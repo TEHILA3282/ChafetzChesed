@@ -1,0 +1,15 @@
+<div class="actions-wrapper">
+  <section class="balance-section">
+    <h2>ריכוז יתרות</h2>
+    <div *ngFor="let action of balanceSummary" [ngClass]="getClass(action.important)">
+      {{ action.perut }}
+    </div>
+  </section>
+
+  <section class="recent-section">
+    <h2>פעולות אחרונות</h2>
+    <div *ngFor="let action of recentActions" [ngClass]="getClass(action.important)">
+      {{ action.perut }}
+    </div>
+  </section>
+</div>

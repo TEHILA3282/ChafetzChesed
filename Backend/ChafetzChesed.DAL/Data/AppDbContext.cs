@@ -17,6 +17,10 @@ namespace ChafetzChesed.DAL.Data
         public DbSet<Loan> Loans { get; set; }
         public DbSet<Deposit> Deposits { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<AccountAction> AccountActions { get; set; }
+        public DbSet<BankAccount> BankAccounts { get; set; }
+
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

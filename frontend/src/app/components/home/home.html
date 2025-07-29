@@ -1,15 +1,19 @@
 <div class="home-container">
-  <main class="main">
-    <h1>קופת גמילות חסדים</h1>
-    <h3>קהילת בית שמעיה</h3>
+  <main class="main animated-fade-in">
+    <div class="title-container">
+      <img [src]="'/assets/' + institution.logo" alt="לוגו הגמ\" class="gmach-logo" />
+      <div class="titles">
+        <h1 class="gmach-name">{{ institution.name }}</h1>
+      </div>
+    </div>
 
-    <section class="cards">
-      <a class="card" routerLink="/messages">תיבת הודעות</a>
-<a class="card" routerLink="/performing-actions" role="button">ביצוע פעולות</a>
-
-      <a class="card" routerLink="/account">מצב החשבון</a>
-    </section>
     <app-home-main-section></app-home-main-section>
-
   </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>מופעל על ידי:</span>
+      <img src="hafetzLogo.png" alt="חפץ חסד לוגו" class="hafetz-logo" />
+    </div>
+  </footer>
 </div>

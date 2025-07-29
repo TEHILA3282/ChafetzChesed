@@ -1,4 +1,6 @@
 ﻿using ChafetzChesed.DAL.Entities;
+using ChafetzChesed.Common.DTOs;
+
 
 namespace ChafetzChesed.BLL.Interfaces
 {
@@ -9,9 +11,12 @@ namespace ChafetzChesed.BLL.Interfaces
         Task<Registration> AddAsync(Registration registration);
         Task<bool> UpdateAsync(Registration registration);
         Task<bool> DeleteAsync(string id);
+        Task<bool> UpdateStatusAsync(string RegistrationId, string newStatus);
         Task<List<Registration>> GetPendingAsync(int institutionId);
-        Task<bool> UpdateStatusAsync(string registrationId, string newStatus);
         Task<bool> ExistsAsync(string email, string id, int institutionId);
+        Task<List<Registration>> GetByStatusAsync(int institutionId, string status);
+        Task<bool> UpdatePartialAsync(string userId, RegistrationUpdateDto dto);
+
 
     }
 }

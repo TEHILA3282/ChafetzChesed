@@ -2,7 +2,8 @@
 {
     public class UpdateStatusDto
     {
-        public string RegistrationId { get; set; }
-        public string NewStatus { get; set; }
+        public string RegistrationId { get; set; } = string.Empty;
+        public string NewStatus { get; set; } = string.Empty;
     }
+
 }

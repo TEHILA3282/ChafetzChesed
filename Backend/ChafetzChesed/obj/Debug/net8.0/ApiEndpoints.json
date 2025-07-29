@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "ChafetzChesed.Controllers.AdminController",
+    "Method": "GetApprovedAsync",
+    "RelativePath": "api/Admin/approved",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ChafetzChesed.DAL.Entities.Registration, ChafetzChesed.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AdminController",
     "Method": "GetExternalFormsAsync",
     "RelativePath": "api/Admin/external-forms",
     "HttpMethod": "GET",
@@ -41,9 +61,39 @@
   },
   {
     "ContainingType": "ChafetzChesed.Controllers.AdminController",
+    "Method": "GetRejectedAsync",
+    "RelativePath": "api/Admin/rejected",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ChafetzChesed.DAL.Entities.Registration, ChafetzChesed.DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AdminController",
     "Method": "SyncUsersAsync",
     "RelativePath": "api/Admin/sync-users",
     "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AdminController",
+    "Method": "TestLocal",
+    "RelativePath": "api/Admin/test-local",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -60,6 +110,42 @@
       {
         "Name": "request",
         "Type": "ChafetzChesed.Common.DTOs.UpdateStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AuthController",
+    "Method": "GetBankDetails",
+    "RelativePath": "api/Auth/get-bank-details",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AuthController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "api/Auth/get-current-user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.AuthController",
+    "Method": "GetUser",
+    "RelativePath": "api/Auth/get-user/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
@@ -618,6 +704,64 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.RegistrationController",
+    "Method": "UpdateBankDetails",
+    "RelativePath": "api/Registration/update-bank",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ChafetzChesed.Common.DTOs.BankAccountUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.RegistrationController",
+    "Method": "UpdatePersonalDetails",
+    "RelativePath": "api/Registration/update-personal",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ChafetzChesed.Common.DTOs.RegistrationUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.SearchController",
+    "Method": "Search",
+    "RelativePath": "api/Search/{term}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "term",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ChafetzChesed.Controllers.UsersController",
+    "Method": "GetAccountActionsForUser",
+    "RelativePath": "api/Users/account-actions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "ChafetzChesed.Controllers.WeatherForecastController",

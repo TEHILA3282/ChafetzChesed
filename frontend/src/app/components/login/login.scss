@@ -1,54 +1,101 @@
-.form-container {
+.login-page {
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
-  min-height: 100vh;
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, #fffefb, #fffaf2);
   direction: rtl;
+  padding: 0 1rem;
+  
+}
+
+.login-card {
+  background-color: #fffefb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  max-width: 420px;
+  width: 50%;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 55px;
+
+  .logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .sub {
+    margin-bottom: 1.5rem;
+    color: #4caf50;
+
+    a {
+      color: #388e3c;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
 
   form {
-    width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-top: 2rem;
-  }
 
-  .full-width {
-    width: 100%;
-  }
+    .submit-container {
+      margin-top: 1rem;
+    }
 
-  .submit-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-  }
+    .forgot-password {
+      margin-top: 0.5rem;
+    }
 
-  .header {
-    text-align: center;
-
-    h1 {
-      font-size: 2rem;
+    .error-message {
+      color: red;
+      text-align: center;
       font-weight: bold;
     }
-
-    .sub {
-      margin-top: 0.5rem;
-      color: #4caf50;
-      font-weight: 500;
-
-      a {
-        color: #388e3c;
-        text-decoration: underline;
-      }
-      .error-message {
-  color: red;
-  text-align: center;
-  font-weight: bold;
+  }
 }
 
-    }
+::ng-deep .modern-input.mat-form-field {
+  width: 100%;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding-inline: 10px;
+  box-shadow: 0 0 0 1px #ddd;
+  transition: box-shadow 0.3s ease;
+
+  .mat-form-field-flex {
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-outline {
+    display: none;
+  }
+
+  .mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 0;
+    border: none;
+  }
+
+  &.mat-focused {
+    box-shadow: 0 0 0 2px #4caf50;
+  }
+
+  input::placeholder {
+    color: #999;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-left: 0.25rem;
   }
 }
