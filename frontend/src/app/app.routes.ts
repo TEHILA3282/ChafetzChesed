@@ -12,6 +12,7 @@ import { AdminComponent } from './components/admin-dashboard/admin-dashboard';
 import { AdminGuard } from './guards/admin.guard';
 import { Register } from './components/register/register';
 import { PerformingActionsComponent } from './components/performing-actions/performing-actions';
+import { DepositListComponent } from './components/deposit-list/deposit-list'; // עדכני נתיב לפי המיקום שלך
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +26,8 @@ export const routes: Routes = [
   { path: 'performing-actions', component: PerformingActionsComponent },
 
   { path: 'account', component: AccountComponent, canActivate: [AuthGuard] },
-  { path: 'deposit', component: DepositComponent , canActivate: [AuthGuard] },
+{ path: 'deposit/:id', component: DepositComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminGuard] },
+  { path: 'deposits', component: DepositListComponent },
 
-  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminGuard] }
 ];

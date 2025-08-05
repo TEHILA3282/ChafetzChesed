@@ -1,0 +1,16 @@
+<div class="actions-container">
+  <h2 class="title">בחרו סוג הפקדה</h2>
+  <p class="subtitle">בחרו את סוג ההפקדה הרצוי שברצונכם לבצע</p>
+
+  <div class="cards">
+    <div
+      class="card"
+      *ngFor="let deposit of depositTypes"
+      (click)="goToDeposit(deposit)"
+    >
+      <h3>{{ deposit.name }}</h3>
+      <p>{{ deposit.description }}</p>
+      <button class="circle-btn"><span class="arrow">⬅</span></button>
+    </div>
+  </div>
+</div>
