@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChafetzChesed.DAL")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb414ab1c6d2453409e7f1fd15105df538540b36")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+761d37ae4a409c6b135557e8d13e9967c0e0b217")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChafetzChesed.DAL")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChafetzChesed.DAL")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

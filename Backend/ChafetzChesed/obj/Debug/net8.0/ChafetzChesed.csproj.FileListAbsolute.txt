@@ -1,3 +1,11 @@
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.csproj.AssemblyReference.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.AssemblyInfoInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.AssemblyInfo.cs
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.csproj.CoreCompileInputs.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.sourcelink.json
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\appsettings.json
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\ChafetzChesed.staticwebassets.endpoints.json
@@ -176,14 +184,6 @@ C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\ChafetzChesed.BLL.pdb
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\ChafetzChesed.Common.pdb
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\bin\Debug\net8.0\ChafetzChesed.DAL.pdb
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.csproj.AssemblyReference.cache
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.AssemblyInfoInputs.cache
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.AssemblyInfo.cs
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.csproj.CoreCompileInputs.cache
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\ChafetzChesed.sourcelink.json
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\scopedcss\bundle\ChafetzChesed.styles.css
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\משתמש\Desktop\Chefetz-Chesed\Chefetz-Chesed-\Backend\ChafetzChesed\obj\Debug\net8.0\staticwebassets.development.json

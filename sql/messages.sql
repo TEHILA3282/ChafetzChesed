@@ -1,9 +1,13 @@
 CREATE TABLE Messages (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    ClientID VARCHAR(9) NOT NULL,  -- קישור ל-Registration(ID)
-    MessageType NVARCHAR(20) NOT NULL CHECK (MessageType IN (N'מערכת', N'גביה')),
-    MessageText NVARCHAR(MAX) NOT NULL,
-    DateSent DATETIME NOT NULL DEFAULT GETDATE(),
-    IsRead BIT NOT NULL DEFAULT 0,
-    FOREIGN KEY (ClientID) REFERENCES Registration(ID)
+    Id INT PRIMARY KEY IDENTITY,
+    Zeout VARCHAR(9) NOT NULL,           -- ת"ז של המשתמש כמחרוזת
+    InstitutionId INT NOT NULL,          -- קוד מוסד
+    Seder INT NOT NULL,                  -- סדר להצגה
+    Perut NVARCHAR(MAX) NOT NULL,        -- תוכן ההודעה
+    Important INT NOT NULL,              -- סוג הודעה (0=רגילה, 1=מודגשת)
+    CreatedAt DATETIME NOT NULL,         -- תאריך יצירה
+
+    CONSTRAINT FK_Messages_Registration
+        FOREIGN KEY (Zeout, InstitutionId)
+        REFERENCES Registration(ID, InstitutionId)
 );

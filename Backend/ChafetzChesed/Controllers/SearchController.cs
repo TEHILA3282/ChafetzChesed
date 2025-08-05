@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
-using ChafetzChesed.Common.DTOs;
 namespace ChafetzChesed.Controllers
 {
     [Authorize]
@@ -22,11 +21,6 @@ namespace ChafetzChesed.Controllers
         {
             term = term.ToLower();
 
-            var messages = await _context.Messages
-                .Where(m => m.MessageText.ToLower().Contains(term))
-                .Select(m => new { title = m.MessageText, route = "/messages", type = "הודעה" })
-                .ToListAsync();
-
             var actions = await _context.AccountActions
                 .Where(a => a.Perut.ToLower().Contains(term))
                 .Select(a => new { title = a.Perut, route = "/account", type = "פעולה" })
@@ -37,9 +31,8 @@ namespace ChafetzChesed.Controllers
                 .Select(d => new { title = d.PurposeDetails, route = "/actions/deposit", type = "הפקדה" })
                 .ToListAsync();
 
-            var results = messages.Concat(actions).Concat(deposits).ToList();
 
-            return Ok(results);
+            return Ok();
         }
     }
 }

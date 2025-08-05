@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AccountAction } from '../../services/account-actions.service';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { UserChartComponent } from '../user-chart/user-chart'; 
 
 @Component({
   selector: 'app-account-actions',
   templateUrl: './account-actions.html',
   styleUrls: ['./account-actions.scss'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,UserChartComponent],
 })
 export class AccountActionsComponent implements OnInit {
   balanceSummary: AccountAction[] = [];

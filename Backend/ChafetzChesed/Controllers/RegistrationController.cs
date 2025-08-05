@@ -5,10 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Authorization;
 using ChafetzChesed.Common.DTOs;
-using ChafetzChesed.BLL.Services;
-using System.Security.Claims;
 using ChafetzChesed.DAL.Data;
-using DocumentFormat.OpenXml.InkML;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -23,15 +20,15 @@ namespace ChafetzChesed.Controllers
         private readonly IRegistrationService _registrationService;
         private readonly AppDbContext _context;
 
-        public RegistrationController(
-    IRegistrationService registrationService,
-    AppDbContext context)
+        public RegistrationController( IRegistrationService registrationService, AppDbContext context)
         {
             _registrationService = registrationService;
             _context = context;
         }
 
-        // GET: api/Registration
+        private Registration? GetCurrentUser() => HttpContext.Items["User"] as Registration;
+
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Registration>>> GetAll()
         {
@@ -39,7 +36,6 @@ namespace ChafetzChesed.Controllers
             return Ok(registrations);
         }
 
-        // GET: api/Registration/123456789
         [HttpGet("{id}")]
         public async Task<ActionResult<Registration>> GetById(string id)
         {
@@ -49,7 +45,6 @@ namespace ChafetzChesed.Controllers
             return Ok(registration);
         }
 
-        // POST: api/Registration
         [HttpPost]
         public async Task<ActionResult<Registration>> Add([FromBody] Registration registration)
         {
@@ -86,7 +81,6 @@ namespace ChafetzChesed.Controllers
             }
         }
 
-        // PUT: api/Registration
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Registration registration)
         {
@@ -110,45 +104,33 @@ namespace ChafetzChesed.Controllers
             var exists = await _registrationService.ExistsAsync(email, id, institutionId);
             return Ok(exists);
         }
+
         [HttpPut("update-personal")]
         [Authorize]
         public async Task<IActionResult> UpdatePersonalDetails([FromBody] RegistrationUpdateDto dto)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = GetCurrentUser();
+            if (user == null)
+                return Unauthorized("משתמש לא מאומת");
 
-            if (string.IsNullOrEmpty(userId))
-            {
-                Console.WriteLine("❌ לא נמצאה ת\"ז ב-Claim");
-                return Unauthorized("Missing user ID from NameIdentifier");
-            }
-
-            Console.WriteLine($"✅ ת\"ז שנשלפה מה-Claim: {userId}");
-
-            var result = await _registrationService.UpdatePartialAsync(userId, dto);
+            var result = await _registrationService.UpdatePartialAsync(user.ID, dto);
 
             if (!result)
                 return BadRequest("נכשל לעדכן את הפרטים האישיים");
 
             return Ok("הפרטים האישיים עודכנו בהצלחה ✅");
         }
+
+
         [HttpPut("update-bank")]
         [Authorize]
         public async Task<IActionResult> UpdateBankDetails([FromBody] BankAccountUpdateDto dto)
         {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var user = GetCurrentUser();
+            if (user == null)
+                return Unauthorized("משתמש לא מאומת");
 
-            if (string.IsNullOrEmpty(userId))
-            {
-                Console.WriteLine("❌ לא נמצאה ת\"ז ב-Claim");
-                return Unauthorized("Missing user ID from NameIdentifier");
-            }
-            Console.WriteLine($"✅ ת\"ז שנשלפה מה-Claim: {userId}");
-
-
-            if (string.IsNullOrEmpty(userId))
-                return Unauthorized("Missing user ID");
-
-            var existingAccount = await _context.BankAccounts.FirstOrDefaultAsync(b => b.RegistrationId == userId);
+            var existingAccount = await _context.BankAccounts.FirstOrDefaultAsync(b => b.RegistrationId == user.ID);
 
             if (existingAccount != null)
             {
@@ -162,12 +144,12 @@ namespace ChafetzChesed.Controllers
             {
                 var newAccount = new BankAccount
                 {
-                    RegistrationId = userId,
+                    RegistrationId = user.ID,
                     BankNumber = dto.BankNumber,
                     BranchNumber = dto.BranchNumber,
                     AccountNumber = dto.AccountNumber,
                     AccountOwnerName = dto.AccountOwnerName,
-                    HasDirectDebit = dto.HasDirectDebit 
+                    HasDirectDebit = dto.HasDirectDebit
                 };
                 _context.BankAccounts.Add(newAccount);
             }
@@ -175,6 +157,7 @@ namespace ChafetzChesed.Controllers
             await _context.SaveChangesAsync();
             return Ok("✅ פרטי החשבון עודכנו בהצלחה");
         }
+
 
         private string HashPassword(string password)
         {

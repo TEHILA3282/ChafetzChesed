@@ -1,119 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700;900&display=swap');
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; 
+}
 .home-container {
-  font-family: 'Heebo', sans-serif;
+ height: calc(100vh - 80px);
+   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: linear-gradient(to bottom, #fffaf0, #ffffff);
-  color: #222;
+  padding: 0 20px;
+  font-family: 'Heebo', sans-serif;
   direction: rtl;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
 }
 
 
 .main {
-  flex: 1;
+  flex-grow: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; 
-  overflow: hidden;
-
 }
-
 
 .title-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-  animation: slideInTop 0.8s ease;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .gmach-logo {
-  height: 80px;
-  max-width: 80px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.gmach-logo:hover {
-  transform: scale(1.1);
-}
-
-.titles {
-  text-align: right;
+  height: 70px;
 }
 
 .gmach-name {
-  font-family: 'Rubik', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #2c2c2c;
+  font-size: 2rem;
+  font-weight: 700;
   margin: 0;
-  letter-spacing: -1px;
-}
-
-.community-name {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #888;
-  margin-top: 0.5rem;
 }
 
 .footer {
-  background: #f5f5f5;
-  color: #444;
-  padding: 1rem 0;
+  flex-shrink: 0;
+  background-color: #f2f2f2;
+  border-top: 2px solid #d1d1d1;
+  padding: 1.2rem 0;
   text-align: center;
-  font-size: 0.95rem;
-  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.05);
-  margin-top: 166px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
 }
 
 .footer-content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
 .hafetz-logo {
-  height: 45px;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 4px;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-}
-
-.animated-fade-in {
-  animation: fadeInPage 1s ease-in;
-}
-
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInTop {
-  from {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  height: 40px;
+  padding: 4px 8px;
+  background-color: white;
+  border-radius: 6px;
 }

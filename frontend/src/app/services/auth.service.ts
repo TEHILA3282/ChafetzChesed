@@ -1,12 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap, BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/environment';
-import { AccountAction } from './account-actions.service';
 import { Router } from '@angular/router';
-import { NgZone } from '@angular/core';
-
-
+import { AccountAction } from './account-actions.service';
+import { MessageService, Message } from './message.service';
+import { UserSummary } from './account-actions.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +13,17 @@ import { NgZone } from '@angular/core';
 export class AuthService {
   private apiUrl = environment.apiUrl;
   private tokenSubject = new BehaviorSubject<string | null>(null);
-  private accountActions: AccountAction[] = [];
 
-  constructor(private http: HttpClient,private router: Router,  private zone: NgZone
-) {
+  private accountActions: AccountAction[] = [];
+  private messages: Message[] = [];
+  private userSummarySubject = new BehaviorSubject<UserSummary | null>(null);
+
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private zone: NgZone,
+    private messageService: MessageService
+  ) {
     const savedToken = localStorage.getItem('token');
     if (savedToken) this.tokenSubject.next(savedToken);
   }
@@ -35,6 +41,27 @@ export class AuthService {
           localStorage.setItem('userName', res.user.firstName);
         }
         this.tokenSubject.next(res.token);
+
+  if (res.user?.registrationStatus !== "מאושר") {
+    console.warn(' חשבון לא מאושר – לא טוענים מידע נוסף');
+    return;
+  }
+        setTimeout(() => {
+          this.http.get<AccountAction[]>(`${this.apiUrl}/users/account-actions`).subscribe({
+            next: actions => this.setAccountActions(actions),
+            error: err => console.warn('שגיאה בטעינת פעולות:', err)
+          });
+
+          this.messageService.getMessages().subscribe({
+            next: messages => this.setMessages(messages),
+            error: err => console.warn('שגיאה בטעינת הודעות:', err)
+          });
+
+          this.http.get<UserSummary>(`${this.apiUrl}/users/account-summary`).subscribe({
+            next: summary => this.setUserSummary(summary),
+            error: err => console.warn('שגיאה בטעינת סיכום כספי:', err)
+          });
+        }, 0);
       })
     );
   }
@@ -49,18 +76,20 @@ export class AuthService {
     localStorage.removeItem('userName');
     this.tokenSubject.next(null);
     this.accountActions = [];
-     this.zone.run(() => {
-    this.router.navigate(['/home']);
-  });
+    this.messages = [];
+    this.userSummarySubject.next(null);
+    this.zone.run(() => {
+      this.router.navigate(['/home']);
+    });
   }
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }
 
-getToken(): string | null {
-  return localStorage.getItem('token');
-}
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
 
   getTokenObservable(): Observable<string | null> {
     return this.tokenSubject.asObservable();
@@ -79,4 +108,19 @@ getToken(): string | null {
     return this.accountActions;
   }
 
+  setMessages(messages: Message[]) {
+    this.messages = messages;
+  }
+
+  getMessages(): Message[] {
+    return this.messages;
+  }
+
+  setUserSummary(summary: UserSummary) {
+    this.userSummarySubject.next(summary);
+  }
+
+  getUserSummary(): Observable<UserSummary | null> {
+    return this.userSummarySubject.asObservable();
+  }
 }

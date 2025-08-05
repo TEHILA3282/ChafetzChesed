@@ -20,8 +20,8 @@ namespace ChafetzChesed.BLL.Services
         {
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub, id), // ת"ז
-                new Claim(JwtRegisteredClaimNames.Email, email), // אימייל
+                new Claim(JwtRegisteredClaimNames.Sub, id), 
+                new Claim(JwtRegisteredClaimNames.Email, email), 
                 new Claim("InstitutionId", institutionId.ToString()),
                 new Claim(ClaimTypes.Role, role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())

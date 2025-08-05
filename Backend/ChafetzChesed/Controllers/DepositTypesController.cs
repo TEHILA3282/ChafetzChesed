@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.DAL.Entities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace ChafetzChesed.Controllers
 {
     [Route("api/[controller]")]

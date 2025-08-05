@@ -1,12 +1,7 @@
-﻿using System.Net.Http;
-using ClosedXML.Excel;
-using System.Net.Http.Headers;
+﻿using ClosedXML.Excel;
 using ChafetzChesed.DAL.Data;
 using ChafetzChesed.DAL.Entities;
 using ChafetzChesed.BLL.Interfaces;
-using ClosedXML.Excel;
-using Microsoft.Extensions.Http;
-using Microsoft.Extensions.DependencyInjection;
 
 public class AccountActionsService : IAccountActionsService
     {
@@ -36,7 +31,7 @@ public class AccountActionsService : IAccountActionsService
                 var action = new AccountAction
                 {
                     InstitutionId = institutionId,
-                    Zeout = long.Parse(row.Cell(2).GetString()),
+                    Zeout = row.Cell(2).GetString()?.Trim().PadLeft(9, '0'),
                     Seder = int.Parse(row.Cell(3).GetString()),
                     Perut = row.Cell(4).GetString(),
                     Important = int.Parse(row.Cell(5).GetString())

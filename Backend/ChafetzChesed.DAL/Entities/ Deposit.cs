@@ -1,5 +1,3 @@
-using System;
-
 namespace ChafetzChesed.DAL.Entities
 {
     public class Deposit
