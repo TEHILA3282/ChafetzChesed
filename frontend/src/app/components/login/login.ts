@@ -10,6 +10,8 @@ import { AuthService } from '../../services/auth.service';
 import { ForgotPassword } from '../forgot-password/forgot-password';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { InstitutionService } from '../../services/institution.service';
+import { AccountActionsService } from '../../services/account-actions.service';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +39,9 @@ export class LoginComponent {
     private dialog: MatDialog,
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private institutionService: InstitutionService,
+    private actionsService: AccountActionsService
   ) {
     this.form = this.fb.group({
       emailOrId: ['', Validators.required],
@@ -45,44 +49,43 @@ export class LoginComponent {
     });
   }
 
-  onSubmit() {
-    if (this.form.valid) {
-      const hostname = window.location.hostname;
-      const subdomain = hostname.includes('localhost') ? 'localhost' : hostname.split('.')[0];
-      const institutionId = 1; 
+ onSubmit() {
+  if (this.form.valid) {
+    const institutionId = this.institutionService.getInstitutionId();
 
-      const credentials = {
-        emailOrId: this.form.value.emailOrId,
-        password: this.form.value.password,
-        institutionId
-      };
+    const credentials = {
+      emailOrId: this.form.value.emailOrId,
+      password: this.form.value.password,
+      institutionId
+    };
 
-      console.log('נשלח לשרת:', credentials);
+    this.authService.login(credentials).subscribe({
+      next: (res) => {
+        localStorage.setItem('token', res.token);
 
-      this.authService.login(credentials).subscribe({
-        next: (res) => {
-          console.log('מה הגיע מהשרת:', res);
+        this.actionsService.getAllActions().subscribe(actions => {
+          this.authService.setAccountActions(actions);
+
           const role = res.user?.role;
           if (role === 'Admin') {
             this.router.navigate(['/admin']);
           } else {
             this.router.navigate(['/home']);
           }
-        },
-        error: (err: any) => {
-          console.error('שגיאה בהתחברות', err);
-          this.errorMessage =
-            typeof err.error?.message === 'string'
-              ? err.error.message
-              : 'כתובת מייל/ת"ז או סיסמה שגויים';
-        }
-      });
-    }
-  }
-
-  openForgotPassword() {
-    this.dialog.open(ForgotPassword, {
-      width: '400px'
+        });
+      },
+      error: (err: any) => {
+        this.errorMessage =
+          typeof err.error?.message === 'string'
+            ? err.error.message
+            : 'כתובת מייל/ת"ז או סיסמה שגויים';
+      }
     });
   }
+}
+openForgotPassword() {
+  this.dialog.open(ForgotPassword, {
+    width: '400px'
+  });
+}
 }

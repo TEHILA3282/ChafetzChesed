@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "AfHz9R3dthYhVTnQ4C+k7TwQIUKgrQKr0oH+hmFeR/o=",
+  "Hash": "P+1nYHPrr4ZlFnaxg2A0hp5fguPix/MlyHWNdfQETlo=",
   "Source": "ChafetzChesed",
   "BasePath": "_content/ChafetzChesed",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

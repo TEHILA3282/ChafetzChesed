@@ -1,36 +1,32 @@
-<div class="form-container">
-  <div class="header">
+<div class="login-page">
+  <div class="login-card">
+    <img src="/assets/logo.png" alt="לוגו הגמ" class="logo" />
     <h1>כניסה לקופת הגמ"ח</h1>
     <div class="sub">
       משתמש חדש? <a routerLink="/register">להרשמה לחץ כאן</a>
     </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field class="modern-input" appearance="fill">
+        <input matInput formControlName="emailOrId" placeholder="תעודת זהות / מייל" />
+      </mat-form-field>
+
+      <mat-form-field class="modern-input" appearance="fill">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="סיסמה" />
+        <button mat-icon-button matSuffix type="button" (click)="hide = !hide">
+          <mat-icon>{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <div class="submit-container">
+        <button mat-raised-button color="primary" type="submit">כניסה</button>
+      </div>
+
+      <div class="forgot-password">
+        <button mat-button (click)="openForgotPassword()">שכחתי סיסמא</button>
+      </div>
+    </form>
   </div>
-
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>כתובת מייל / תעודת זהות</mat-label>
-      <input matInput formControlName="emailOrId" />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>סיסמא</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
-      <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
-        <mat-icon>{{ hide ? 'visibility' : 'visibility_off' }}</mat-icon>
-      </button>
-    </mat-form-field>
-
-    <!-- הודעת שגיאה אם קיימת -->
-    <div class="error-message" *ngIf="errorMessage">
-      {{ errorMessage }}
-    </div>
-
-    <div class="submit-container">
-      <button mat-raised-button color="primary" type="submit">כניסה</button>
-    </div>
-
-    <div class="sub">
-      <button mat-button (click)="openForgotPassword()">שכחתי סיסמא</button>
-    </div>
-  </form>
 </div>

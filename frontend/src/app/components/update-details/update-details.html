@@ -1,0 +1,122 @@
+<ng-container *ngIf="detailsForm; else loading">
+  <div class="form-wrapper">
+    <h2 class="form-title">עריכת פרטים אישיים</h2>
+
+    <form [formGroup]="detailsForm" (ngSubmit)="submit()" class="form-grid">
+
+      <mat-form-field appearance="fill">
+        <mat-label>שם פרטי</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>שם משפחה</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>טלפון נייד</mat-label>
+        <input matInput formControlName="phoneNumber" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>טלפון קווי</mat-label>
+        <input matInput formControlName="landlineNumber" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>אימייל</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>תאריך לידה</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>סטטוס אישי</mat-label>
+        <mat-select formControlName="personalStatus">
+          <mat-option *ngFor="let status of personalStatuses" [value]="status">
+            {{ status }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>רחוב</mat-label>
+        <input matInput formControlName="street" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>עיר</mat-label>
+        <input matInput formControlName="city" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>מספר בית</mat-label>
+        <input matInput formControlName="houseNumber" />
+      </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button color="primary" class="submit-button" (click)="submit()">
+      עדכון פרטים
+    </button>
+  </div>
+</ng-container>
+
+<div class="bank-details-wrapper">
+  <h2 class="form-title">פרטי חשבון בנק</h2>
+
+  <form [formGroup]="bankForm" class="form-grid">
+
+    <mat-form-field appearance="fill">
+      <mat-label>מספר בנק</mat-label>
+      <input matInput formControlName="bankNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>סניף בנק</mat-label>
+      <input matInput formControlName="branchNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>מספר חשבון</mat-label>
+      <input matInput formControlName="accountNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>שם בעלי החשבון</mat-label>
+      <input matInput formControlName="accountOwnerName" />
+    </mat-form-field>
+
+    <div class="radio-group">
+      <label>האם נחתמה הוראת קבע בבנק?</label>
+     <mat-radio-group formControlName="hasDirectDebit">
+  <mat-radio-button [value]="true">כן</mat-radio-button>
+  <mat-radio-button [value]="false">לא</mat-radio-button>
+  </mat-radio-group>
+  </div>
+
+  </form>
+
+  <button mat-raised-button color="primary" class="submit-button" (click)="submitBank()">
+    עדכון פרטים
+  </button>
+</div>
+
+<ng-template #loading>
+  <div class="loading-message">
+    טוען פרטי משתמש...
+  </div>
+</ng-template>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span>מופעל על ידי:</span>
+      <img src="hafetzLogo.png" alt="חפץ חסד לוגו" class="hafetz-logo" />
+    </div>
+  </footer>

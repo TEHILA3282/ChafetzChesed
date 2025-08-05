@@ -2,22 +2,99 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to left, black, #111);
-  padding: 15px;
-  color: white;
-  font-weight: bold;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(to left, #fff6e6, #ffffff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  font-family: 'Heebo', sans-serif;
+  color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  a {
-    color: white;
-    text-decoration: none;
-    margin: 0 8px;
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .hafetz-header-logo {
+    height: 48px;
+    transition: transform 0.3s ease;
 
     &:hover {
-      color: #90ee90;
+      transform: scale(1.1);
     }
   }
 
-  .active {
-    color: #90ee90;
+  .site-title {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #f7941d;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+
+    &:hover {
+      color: #f7941d;
+    }
+
+    &.active::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: #90ee90;
+      bottom: -5px;
+      left: 0;
+    }
+  }
+}
+
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: #f7941d;
+    }
+  }
+
+  span {
+    font-size: 0.95rem;
+    color: #555;
+  }
+}
+
+
+/* Animation */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

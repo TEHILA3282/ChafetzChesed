@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrationService } from '../../services/registration.service';
-import { institutionMap } from '../../institution-map';
+import { InstitutionService } from '../../services/institution.service';
 
 @Component({
   selector: 'app-register',
@@ -50,11 +50,12 @@ export class Register {
     private fb: FormBuilder,
     private registrationService: RegistrationService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private institutionService: InstitutionService,
+
   ) {
-    const hostname = window.location.hostname;
-    const subdomain = hostname.includes('localhost') ? 'localhost' : hostname.split('.')[0];
-    const institutionId = institutionMap[subdomain] || 0;
+ const institutionId = this.institutionService.getInstitutionId();
+
 
     this.form = this.fb.group({
       FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],

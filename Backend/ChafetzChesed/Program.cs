@@ -7,6 +7,7 @@ using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.BLL.Services;
 using ChafetzChesed.DAL.Data;
 using ChafetzChesed.Common;
+using System.IdentityModel.Tokens.Jwt;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
 
-// הגדרת אימות JWT
+// הגדרת אימות JWT עם שם משתמש מתוך claim בשם "sub"
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -30,7 +31,10 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = jwtSettings.Issuer,
         ValidAudience = jwtSettings.Audience,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
+
+        // 💥 שורה קריטית: ת"ז תישלף מתוך claim בשם "sub"
+        NameClaimType = JwtRegisteredClaimNames.Sub
     };
 });
 
@@ -45,8 +49,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-// הוספת HttpClient לתמיכה בשירותים חיצוניים
-builder.Services.AddHttpClient(); // ← שורה חשובה לתיקון השגיאה שלך
+// שירותים חיצוניים
+builder.Services.AddHttpClient();
 
 // רישום שירותים
 builder.Services.AddScoped<IRegistrationService, RegistrationService>();
@@ -72,13 +76,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 
 app.UseHttpsRedirection();
 app.UseCors("AllowLocalhost4200");
