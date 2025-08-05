@@ -1,5 +1,6 @@
 CREATE TABLE DepositTypes (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     Name NVARCHAR(100) NOT NULL,
-    Description TEXT
+    Description NVARCHAR(255),
+    IsDirectDebit BIT NOT NULL
 );

@@ -1,161 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\",
+  "WorkspaceRootPath": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\",
   "Documents": [
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.dal\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.dal\\entities\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.dal\\data\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\data\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed.bll\\chafetzchesed.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\chafetzchesed.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chafetzchesed\\backend\\chafetzchesed\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-=======
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\services\\registrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\registrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\entities\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\interfaces\\iregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\interfaces\\iregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\registrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\dtos\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\dtos\\updatestatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\dtos\\updatestatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\models\\externalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\models\\externalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\services\\externalformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\externalformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\interfaces\\iexternalusersyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\interfaces\\iexternalusersyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\interfaces\\iexternalformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\interfaces\\iexternalformservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\services\\externalusersyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\externalusersyncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.bll\\services\\deposittypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D95FEDCB-D582-43A3-9B48-D3438CD60328}|ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj|solutionrelative:chafetzchesed.bll\\services\\deposittypeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\models\\externalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\models\\externalform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\entities\\institution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\institution.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\chafetzchesed.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|solutionrelative:chafetzchesed.common\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\data\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\data\\messagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCA708D-EA01-4A50-AE4E-7BE5C6F782B0}|ChafetzChesed.DAL\\ChafetzChesed.DAL.csproj|solutionrelative:chafetzchesed.dal\\entities\\ loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8A83B4D-812C-42AD-817D-D1F358985C31}|ChafetzChesed.Common\\ChafetzChesed.Common.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed.common\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -171,7 +68,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|c:\\users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\desktop\\chefetz-chesed\\chefetz-chesed-\\backend\\chafetzchesed\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
->>>>>>> recovery-branch
       "RelativeMoniker": "D:0:0:{97E99003-A194-47CA-8AB0-833A0FF361FD}|ChafetzChesed\\ChafetzChesed.csproj|solutionrelative:chafetzchesed\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -182,403 +78,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MessagesController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\MessagesController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\MessagesController.cs",
               "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\MessagesController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\MessagesController.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\MessagesController.cs",
               "RelativeToolTip": "ChafetzChesed\\Controllers\\MessagesController.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAUwCYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T14:10:17.583Z",
+              "WhenOpened": "2025-07-13T09:40:49.739Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Message.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\Message.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Message.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\Message.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Message.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T13:57:51.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-07T12:44:50.006Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Program.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Program.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Program.cs",
-              "RelativeToolTip": "ChafetzChesed\\Program.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAowFUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T12:41:47.64Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAaAAAAAAAAAA==",
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "ChafetzChesed.DAL\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T13:02:35.951Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": " Loan.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\ Loan.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\ Loan.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Entities\\ Loan.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\ Loan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T09:15:08.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ChafetzChesed.csproj",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\ChafetzChesed.csproj",
-              "RelativeDocumentMoniker": "ChafetzChesed\\ChafetzChesed.csproj",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\ChafetzChesed.csproj",
-              "RelativeToolTip": "ChafetzChesed\\ChafetzChesed.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-02T12:47:46.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\appsettings.json",
-              "RelativeDocumentMoniker": "ChafetzChesed\\appsettings.json",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\appsettings.json",
-              "RelativeToolTip": "ChafetzChesed\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-01T12:36:19.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T12:22:21.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ChafetzChesed\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T11:08:21.059Z"
+              "WhenOpened": "2025-07-13T09:40:49.984Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RegistrationController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "RelativeToolTip": "ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAgwEEAAAAfAAAAAAAAAA==",
-=======
-              "DocumentIndex": 3,
-              "Title": "IRegistrationService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IRegistrationService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Interfaces\\IRegistrationService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IRegistrationService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Interfaces\\IRegistrationService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAYwA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:23:00.786Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegistrationService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\RegistrationService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\RegistrationService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\RegistrationService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\RegistrationService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwD8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T14:57:07.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RegistrationController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "RelativeToolTip": "ChafetzChesed\\Controllers\\RegistrationController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAwwGcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T13:25:57.758Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Registration.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Registration.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
->>>>>>> recovery-branch
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T13:25:57.758Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 11,
-              "Title": "MessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Data\\MessageRepository.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Data\\MessageRepository.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.DAL\\Data\\MessageRepository.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Data\\MessageRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T11:57:53.61Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-=======
-              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Program.cs",
               "RelativeDocumentMoniker": "ChafetzChesed\\Program.cs",
               "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Program.cs",
               "RelativeToolTip": "ChafetzChesed\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAowFUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-01T12:27:52.713Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T09:40:49.988Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\AdminController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "ChafetzChesed\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAADwv0EAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Registration.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Registration.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Registration.cs",
+              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Registration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:08:33.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\DTOs\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.Common\\DTOs\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\DTOs\\LoginRequest.cs",
-              "RelativeToolTip": "ChafetzChesed.Common\\DTOs\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T17:50:58.363Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "ChafetzChesed\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAIwFsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T11:08:21.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
->>>>>>> recovery-branch
-              "Title": "JwtSettings.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\JwtSettings.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.Common\\JwtSettings.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\JwtSettings.cs",
-              "RelativeToolTip": "ChafetzChesed.Common\\JwtSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T12:39:56.767Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 15,
-=======
-              "DocumentIndex": 8,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\JwtService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAUwCwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T12:22:21.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ExternalForm.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Models\\ExternalForm.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Models\\ExternalForm.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Models\\ExternalForm.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Models\\ExternalForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:17:49.727Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UpdateStatusDto.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\DTOs\\UpdateStatusDto.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.Common\\DTOs\\UpdateStatusDto.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\DTOs\\UpdateStatusDto.cs",
-              "RelativeToolTip": "ChafetzChesed.Common\\DTOs\\UpdateStatusDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T09:32:48.485Z"
+              "WhenOpened": "2025-07-13T09:40:49.993Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "ExternalFormService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\ExternalFormService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\ExternalFormService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\ExternalFormService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\ExternalFormService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:13:54.131Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "IExternalUserSyncService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IExternalUserSyncService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Interfaces\\IExternalUserSyncService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IExternalUserSyncService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Interfaces\\IExternalUserSyncService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:14:46.121Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IExternalFormService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IExternalFormService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Interfaces\\IExternalFormService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Interfaces\\IExternalFormService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Interfaces\\IExternalFormService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:33:41.28Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ExternalUserSyncService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\ExternalUserSyncService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\ExternalUserSyncService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\ExternalUserSyncService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\ExternalUserSyncService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwDEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:15:25.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DepositTypeService.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\DepositTypeService.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\DepositTypeService.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\DepositTypeService.cs",
-              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\DepositTypeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T08:44:40.113Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ExternalForm.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\Models\\ExternalForm.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.Common\\Models\\ExternalForm.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\Models\\ExternalForm.cs",
-              "RelativeToolTip": "ChafetzChesed.Common\\Models\\ExternalForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T08:21:10.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Institution.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Institution.cs",
-              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Institution.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Institution.cs",
-              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Institution.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T15:05:30.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.json",
-              "RelativeDocumentMoniker": "ChafetzChesed\\appsettings.json",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.json",
-              "RelativeToolTip": "ChafetzChesed\\appsettings.json",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAswBEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-01T12:36:19.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
               "Title": " Loan.cs",
               "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\ Loan.cs",
               "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\ Loan.cs",
@@ -586,11 +139,36 @@
               "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\ Loan.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-03T09:15:08.334Z"
+              "WhenOpened": "2025-07-13T09:40:49.996Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 0,
+              "Title": "RegistrationController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\RegistrationController.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\RegistrationController.cs",
+              "RelativeToolTip": "ChafetzChesed\\Controllers\\RegistrationController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAgwEEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:50.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Message.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Entities\\Message.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Entities\\Message.cs",
+              "RelativeToolTip": "ChafetzChesed.DAL\\Entities\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:49.966Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ChafetzChesed.csproj",
               "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\ChafetzChesed.csproj",
               "RelativeDocumentMoniker": "ChafetzChesed\\ChafetzChesed.csproj",
@@ -598,68 +176,115 @@
               "RelativeToolTip": "ChafetzChesed\\ChafetzChesed.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-02T12:47:46.462Z"
+              "WhenOpened": "2025-07-13T09:40:50.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
->>>>>>> recovery-branch
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.json",
+              "RelativeDocumentMoniker": "ChafetzChesed\\appsettings.json",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.json",
+              "RelativeToolTip": "ChafetzChesed\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-13T09:40:50.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.BLL\\Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\Services\\JwtService.cs",
+              "RelativeToolTip": "ChafetzChesed.BLL\\Services\\JwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:50.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ChafetzChesed\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:50.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Data\\MessageRepository.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.DAL\\Data\\MessageRepository.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.DAL\\Data\\MessageRepository.cs",
+              "RelativeToolTip": "ChafetzChesed.DAL\\Data\\MessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:50.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "ChafetzChesed.Common\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\JwtSettings.cs",
+              "RelativeToolTip": "ChafetzChesed.Common\\JwtSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-13T09:40:50.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ChafetzChesed\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\Properties\\launchSettings.json",
               "RelativeToolTip": "ChafetzChesed\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-02T11:56:51.102Z"
+              "WhenOpened": "2025-07-13T09:40:50.202Z"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 14,
-=======
-              "DocumentIndex": 23,
->>>>>>> recovery-branch
               "Title": "ChafetzChesed.BLL.csproj",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
               "RelativeDocumentMoniker": "ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
               "RelativeToolTip": "ChafetzChesed.BLL\\ChafetzChesed.BLL.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-02T12:26:47.363Z"
+              "WhenOpened": "2025-07-13T09:40:50.204Z"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 13,
-=======
-              "DocumentIndex": 22,
->>>>>>> recovery-branch
               "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\Class1.cs",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\Class1.cs",
               "RelativeDocumentMoniker": "ChafetzChesed.Common\\Class1.cs",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\Class1.cs",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\Class1.cs",
               "RelativeToolTip": "ChafetzChesed.Common\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T12:39:19.199Z"
+              "WhenOpened": "2025-07-13T09:40:50.21Z"
             },
             {
               "$type": "Document",
-<<<<<<< HEAD
               "DocumentIndex": 16,
-=======
-              "DocumentIndex": 25,
->>>>>>> recovery-branch
               "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.Development.json",
               "RelativeDocumentMoniker": "ChafetzChesed\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\\u05DE\u05E9\u05EA\u05DE\u05E9\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed\\appsettings.Development.json",
               "RelativeToolTip": "ChafetzChesed\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-01T12:36:16.204Z"
+              "WhenOpened": "2025-07-13T09:40:50.212Z"
             }
           ]
         }
