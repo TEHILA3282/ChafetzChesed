@@ -60,7 +60,7 @@ export class Register {
     this.form = this.fb.group({
       FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
       LastName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
-      ID: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
+      ID: ['', [Validators.required, Validators.pattern(/^\d{8,9}$/)]],
     PhoneNumber:  ['', [Validators.pattern(/^\d{9}$/)]],
     LandlineNumber: ['', [Validators.pattern(/^\d{10}$/)]],
       Email: ['', [Validators.required, Validators.email]],

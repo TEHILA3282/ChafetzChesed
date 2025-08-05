@@ -1,6 +1,39 @@
 .actions-wrapper {
   padding: 16px;
   font-family: 'Assistant', sans-serif;
+  direction: rtl;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.balance-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.chart-section {
+  flex: 1;
+  min-width: 400px;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+app-user-chart {
+  width: 100%;
+  max-width: 500px;
+}
+
+
+.recent-section {
+  margin-top: 40px;
 }
 
 h2 {

@@ -1,13 +1,11 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ChafetzChesed.DAL.Entities
 {
     public class Registration
     {
         [Key]
-        [StringLength(9, ErrorMessage = "תעודת זהות צריכה להכיל 9 ספרות")]
-        public string ID { get; set; } = null!;
+        public string ID { get; set; } = string.Empty;
 
         [Required]
         [StringLength(50)]

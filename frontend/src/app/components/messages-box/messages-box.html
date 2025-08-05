@@ -1,23 +1,13 @@
-<h2>תיבת הודעות</h2>
+<section>
+  <h2>הודעות כלליות</h2>
+  <div *ngFor="let msg of publicMessages" [ngClass]="getClass(msg.important)">
+    {{ msg.perut }}
+  </div>
+</section>
 
-    <p>חשוב לנו שתהיו מעודכנים אונליין בפעולות הנעשות בחשבונכם בקופת הגמ"ח.</p>
-    <p>במסך זה ניידע אתכם על כל פעולה, עדכון או מידע חשוב לגביכם בידקו תמיד בתיבת ההודעות והישארו מעודכנים.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>תאריך</th>
-      <th>סוג הודעה</th>
-      <th>הודעה</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let msg of messages">
-      <td>{{ msg.dateSent | date:'dd/MM/yyyy' }}</td>
-      <td [ngStyle]="{ color: msg.messageType === 'מערכת' ? 'green' : 'red' }">
-        {{ msg.messageType }}
-      </td>
-      <td>{{ msg.messageText }}</td>
-    </tr>
-  </tbody>
-</table>
+<section>
+  <h2>הודעות אישיות</h2>
+  <div *ngFor="let msg of privateMessages" [ngClass]="getClass(msg.important)">
+    {{ msg.perut }}
+  </div>
+</section>

@@ -67,13 +67,13 @@ namespace ChafetzChesed.BLL.Services
 
         public async Task<bool> ExistsAsync(string email, string id, int institutionId)
         {
-            var all = await GetAllAsync(); 
+            var normalizedId = id.PadLeft(9, '0');
+            var all = await GetAllAsync();
             return all.Any(r =>
                 r.InstitutionId == institutionId &&
-                (r.Email == email || r.ID == id) &&
+                (r.Email == email || r.ID == normalizedId) &&
                 r.RegistrationStatus != "נדחה"
             );
-
         }
         public async Task<bool> UpdateAsync(Registration updated)
         {

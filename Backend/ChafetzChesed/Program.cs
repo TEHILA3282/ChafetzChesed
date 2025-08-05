@@ -2,20 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
-using ChafetzChesed;
 using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.BLL.Services;
 using ChafetzChesed.DAL.Data;
 using ChafetzChesed.Common;
 using System.IdentityModel.Tokens.Jwt;
+using ChafetzChesed.Middleware;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
-// טעינת הגדרות JWT
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
 
-// הגדרת אימות JWT עם שם משתמש מתוך claim בשם "sub"
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -32,13 +31,10 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = jwtSettings.Issuer,
         ValidAudience = jwtSettings.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
-
-        // 💥 שורה קריטית: ת"ז תישלף מתוך claim בשם "sub"
         NameClaimType = JwtRegisteredClaimNames.Sub
     };
 });
 
-// CORS לאנגולאר
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost4200", policy =>
@@ -49,10 +45,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-// שירותים חיצוניים
 builder.Services.AddHttpClient();
 
-// רישום שירותים
 builder.Services.AddScoped<IRegistrationService, RegistrationService>();
 builder.Services.AddScoped<IDepositTypeService, DepositTypeService>();
 builder.Services.AddScoped<ILoanTypeService, LoanTypeService>();
@@ -84,6 +78,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowLocalhost4200");
+
+app.UseMiddleware<JwtMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
 

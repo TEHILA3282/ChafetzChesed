@@ -24,7 +24,6 @@ import { AccountActionsService } from '../../services/account-actions.service';
     MatIconModule,
     MatDialogModule,
     ReactiveFormsModule,
-    ForgotPassword,
     RouterModule
   ],
   templateUrl: './login.html',

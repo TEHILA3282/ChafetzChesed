@@ -8,6 +8,7 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditStatusDialogComponent } from '../edit-status-dialog/edit-status-dialog';
 import { ChangeDetectorRef } from '@angular/core';
+import { UserChartDialogComponent } from '../user-chart-dialog/user-chart-dialog';
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +20,6 @@ import { ChangeDetectorRef } from '@angular/core';
     MatButtonModule,
     MatSnackBarModule,
     MatDialogModule,
-    EditStatusDialogComponent
   ],
   templateUrl: './admin-dashboard.html',
   styleUrls: ['./admin-dashboard.scss'],
@@ -146,4 +146,11 @@ export class AdminComponent implements OnInit {
       }
     });
   }
+  openUserChart(user: any) {
+  this.dialog.open(UserChartDialogComponent, {
+    data: { userId: user.id, fullName: `${user.firstName} ${user.lastName}` },
+    width: '450px',
+    height: '500px'
+  });
+}
 }

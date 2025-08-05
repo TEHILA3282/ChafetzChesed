@@ -1,38 +1,38 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, tap } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 
 export interface Message {
-  id: number;
-  clientID: string;
-  messageType: string;
-  messageText: string;
-  dateSent: Date;
-  isRead: boolean;
+  perut: string;
+  important: number;
+  seder: number;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
-  private apiUrl = `${environment.apiUrl}/messages`;
-  private messagesSubject = new BehaviorSubject<Message[]>([]);
-  messages$ = this.messagesSubject.asObservable();
+  private apiUrl = `${environment.apiUrl}/users/messages`;
+  private loadUrl = `${environment.apiUrl}/admin/load-messages-test`;
 
-  constructor(private http: HttpClient) {
-    const cached = localStorage.getItem('messages');
-    if (cached) {
-      this.messagesSubject.next(JSON.parse(cached));
-    }
-  }
+  constructor(private http: HttpClient) {}
 
   getMessages(): Observable<Message[]> {
-    return this.http.get<Message[]>(this.apiUrl).pipe(
-      tap(messages => {
-        localStorage.setItem('messages', JSON.stringify(messages));
-        this.messagesSubject.next(messages);
-      })
-    );
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get<Message[]>(this.apiUrl, { headers });
+  }
+
+  loadMessagesTest(): Observable<any> {
+    const token = localStorage.getItem('token');
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.get(this.loadUrl, { headers });
   }
 }
