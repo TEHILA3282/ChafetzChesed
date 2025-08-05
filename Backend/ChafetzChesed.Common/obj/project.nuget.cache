@@ -1,5 +1,11 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "72aTDl1cI8E=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\ChafetzChesed\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
+  "expectedPackageFiles": [],
+=======
   "dgSpecHash": "HxAPTqN1hNQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\משתמש\\Desktop\\Chefetz-Chesed\\Chefetz-Chesed-\\Backend\\ChafetzChesed.Common\\ChafetzChesed.Common.csproj",
@@ -75,5 +81,6 @@
     "C:\\Users\\משתמש\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\משתמש\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512"
   ],
+>>>>>>> origin/main
   "logs": []
 }
