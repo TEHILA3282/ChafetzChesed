@@ -1,0 +1,57 @@
+<div class="guarantors-container">
+  <h2 class="main-title">פירוט ערבים</h2>
+  <p class="subtitle">לצורך אישור הבקשה עליך למלא את פרטי הערבים באופן מלא ומדויק.</p>
+
+  <form [formGroup]="form" class="form-wrapper">
+    <div class="guarantors-grid">
+      <div *ngFor="let g of guarantorFormGroups; let i = index" [formGroup]="g" class="guarantor-card">
+        <h3 class="guarantor-title">ערב {{ i + 1 }}</h3>
+
+        <div class="form-field">
+          <label>שם פרטי *</label>
+          <input formControlName="firstName" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>שם משפחה *</label>
+          <input formControlName="lastName" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>תעודת זהות *</label>
+          <input formControlName="idNumber" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>עיסוק *</label>
+          <input formControlName="occupation" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>עיר *</label>
+          <input formControlName="city" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>רחוב *</label>
+          <input formControlName="street" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>מספר בית *</label>
+          <input formControlName="houseNumber" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>קרבה ללווה *</label>
+          <input formControlName="loanLink" type="text">
+        </div>
+
+        <div class="form-field">
+          <label>אימייל *</label>
+          <input formControlName="email" type="email">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
