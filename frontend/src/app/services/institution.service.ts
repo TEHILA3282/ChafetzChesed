@@ -34,7 +34,7 @@ export class InstitutionService {
     'localhost': {
       id: 1,
       name: 'הגמ"ח המרכזי',
-      logo: '',
+      logo: 'https://meizag.co.il/wp-content/uploads/2019/05/chasdey1.jpg',
       themeColor: '#222'
     }
   };

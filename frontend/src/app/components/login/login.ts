@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { InstitutionService } from '../../services/institution.service';
 import { AccountActionsService } from '../../services/account-actions.service';
+import { InstitutionConfig } from '../../services/institution.service';
+import {RejectedDialogComponent} from '../rejected-dialog/rejected-dialog'
 
 @Component({
   selector: 'app-login',
@@ -33,6 +35,7 @@ export class LoginComponent {
   hide = true;
   form: FormGroup;
   errorMessage = '';
+  institution: InstitutionConfig;
 
   constructor(
     private dialog: MatDialog,
@@ -42,13 +45,14 @@ export class LoginComponent {
     private institutionService: InstitutionService,
     private actionsService: AccountActionsService
   ) {
+    this.institution = this.institutionService.getInstitution();
+
     this.form = this.fb.group({
       emailOrId: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
-
- onSubmit() {
+onSubmit() {
   if (this.form.valid) {
     const institutionId = this.institutionService.getInstitutionId();
 
@@ -62,16 +66,25 @@ export class LoginComponent {
       next: (res) => {
         localStorage.setItem('token', res.token);
 
-        this.actionsService.getAllActions().subscribe(actions => {
-          this.authService.setAccountActions(actions);
+        const user = res.user;
+        const role = user?.role;
+        const status = user?.registrationStatus;
 
-          const role = res.user?.role;
-          if (role === 'Admin') {
-            this.router.navigate(['/admin']);
-          } else {
-            this.router.navigate(['/home']);
-          }
-        });
+        if (status === 'מאושר') {
+          this.actionsService.getAllActions().subscribe(actions => {
+            this.authService.setAccountActions(actions);
+
+            if (role === 'Admin') {
+              this.router.navigate(['/admin']);
+            } else {
+              this.router.navigate(['/home']);
+            }
+          });
+        } else if (status === 'ממתין') {
+          this.router.navigate(['/awaiting-approval']);
+        } else if (status === 'נדחה') {
+          this.dialog.open(RejectedDialogComponent); 
+        }
       },
       error: (err: any) => {
         this.errorMessage =
@@ -82,9 +95,16 @@ export class LoginComponent {
     });
   }
 }
-openForgotPassword() {
-  this.dialog.open(ForgotPassword, {
-    width: '400px'
-  });
-}
+
+
+  openForgotPassword() {
+    this.dialog.open(ForgotPassword, {
+      width: '400px'
+    });
+  }
+
+  getLogoPath(): string {
+    const logo = this.institution.logo;
+    return logo.startsWith('http') ? logo : `/assets/${logo}`;
+  }
 }

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AccountAction } from './account-actions.service';
 import { MessageService, Message } from './message.service';
 import { UserSummary } from './account-actions.service';
+import { DepositType } from './deposit-type.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class AuthService {
   private accountActions: AccountAction[] = [];
   private messages: Message[] = [];
   private userSummarySubject = new BehaviorSubject<UserSummary | null>(null);
+  private depositTypes: DepositType[] = [];
 
   constructor(
     private http: HttpClient,
@@ -56,6 +58,14 @@ export class AuthService {
             next: messages => this.setMessages(messages),
             error: err => console.warn('שגיאה בטעינת הודעות:', err)
           });
+
+          this.http.get<DepositType[]>(`${this.apiUrl}/DepositTypes`).subscribe({
+  next: (types) => {
+    this.depositTypes = types;
+  },
+  error: err => console.warn('שגיאה בטעינת סוגי הפקדות:', err)
+});
+
 
           this.http.get<UserSummary>(`${this.apiUrl}/users/account-summary`).subscribe({
             next: summary => this.setUserSummary(summary),
@@ -123,4 +133,8 @@ export class AuthService {
   getUserSummary(): Observable<UserSummary | null> {
     return this.userSummarySubject.asObservable();
   }
+  getDepositTypes(): DepositType[] {
+  return this.depositTypes;
+}
+
 }

@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.DAL.Entities;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+
 namespace ChafetzChesed.Controllers
 {
     [Route("api/[controller]")]
@@ -43,7 +47,6 @@ namespace ChafetzChesed.Controllers
             var updated = await _service.UpdateAsync(depositType);
             return Ok(updated);
         }
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

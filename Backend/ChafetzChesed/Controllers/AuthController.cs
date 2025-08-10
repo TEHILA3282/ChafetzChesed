@@ -27,7 +27,7 @@ namespace ChafetzChesed.Controllers
         }
 
         private Registration? GetLoggedInUser() => HttpContext.Items["User"] as Registration;
-        [AllowAnonymous]
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
@@ -71,7 +71,6 @@ namespace ChafetzChesed.Controllers
                 }
             });
         }
-
 
 
 

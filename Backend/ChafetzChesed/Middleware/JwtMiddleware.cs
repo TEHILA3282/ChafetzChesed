@@ -28,6 +28,7 @@ namespace ChafetzChesed.Middleware
                 path.StartsWith("/api/auth/get-user") ||
                 path.StartsWith("/swagger") ||
                 path.StartsWith("/favicon") ||
+                path.StartsWith("/api/deposittypes") ||
                 path.StartsWith("/index.html")
             ))
             {
@@ -74,7 +75,7 @@ namespace ChafetzChesed.Middleware
                 int.TryParse(institutionIdClaim, out int tokenInstitutionId);
 
                 var user = await registrationService.GetByIdAsync(userId);
-                if (user == null || user.RegistrationStatus != "מאושר")
+                if (user == null || user.RegistrationStatus == "נדחה")
                 {
                     context.Response.StatusCode = StatusCodes.Status403Forbidden;
                     await context.Response.WriteAsync("גישה נדחתה – המשתמש אינו מאושר או לא קיים");

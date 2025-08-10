@@ -19,15 +19,16 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: Register },
   { path: 'home', component: HomeComponent },
-
   { path: 'messages', component: MessagesBoxComponent, canActivate: [AuthGuard,PendingGuard] },
   { path: 'performing-actions', component: PerformingActionsComponent,  canActivate: [AuthGuard,PendingGuard] },
   { path: 'account', component: AccountActionsComponent, canActivate: [AuthGuard,PendingGuard] },
   { path: 'deposit', component: DepositComponent , canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminGuard] },
-  { path: 'awaiting-approval', component: AwaitingApprovalComponent },
+  { path: 'awaiting-approval', component: AwaitingApprovalComponent,canActivate: [AuthGuard]  },
   { path: 'update-details', component: UpdateDetailsComponent,canActivate: [AuthGuard] },
-  { path: 'deposit/:id', component: DepositComponent },
-  { path: 'deposits', component: DepositListComponent }
+  { path: 'deposit/:id', component: DepositComponent , canActivate: [AuthGuard]  },
+  { path: 'deposits', component: DepositListComponent , canActivate: [AuthGuard] },
+
+
 
 ];
