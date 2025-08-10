@@ -9,10 +9,12 @@ import { AdminComponent } from './components/admin-dashboard/admin-dashboard';
 import { AdminGuard } from './guards/admin.guard';
 import { Register } from './components/register/register';
 import { PerformingActionsComponent } from './components/performing-actions/performing-actions';
-import { DepositListComponent } from './components/deposit-list/deposit-list'; // עדכני נתיב לפי המיקום שלך
+import { DepositListComponent } from './components/deposit-list/deposit-list'; 
 import {AwaitingApprovalComponent} from './components/awaiting-approval/awaiting-approval'
 import {PendingGuard}from './guards/pending.guard'
 import { UpdateDetailsComponent } from './components/update-details/update-details';
+import { LoanComponent } from './components/loan/loan';
+import { LoansListComponent } from './components/loans-list/loans-list';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -28,7 +30,6 @@ export const routes: Routes = [
   { path: 'update-details', component: UpdateDetailsComponent,canActivate: [AuthGuard] },
   { path: 'deposit/:id', component: DepositComponent , canActivate: [AuthGuard]  },
   { path: 'deposits', component: DepositListComponent , canActivate: [AuthGuard] },
-
-
-
+  { path: 'loan/:id', component: LoanComponent },
+  {path: 'loans-list', component:LoansListComponent}
 ];
