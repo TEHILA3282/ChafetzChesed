@@ -11,7 +11,6 @@ export class RegistrationService {
   register(data: any): Observable<any> {
     return this.http.post('https://localhost:7150/api/registration', data);
   }
-  // registration.service.ts
 private apiUrl = environment.apiUrl;
 
 checkEmailOrIdExists(email: string, id: string, institutionId: number): Observable<boolean> {

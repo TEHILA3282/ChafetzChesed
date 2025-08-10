@@ -1,7 +1,7 @@
 <div class="login-page">
   <div class="login-card">
-    <img src="/assets/logo.png" alt="לוגו הגמ" class="logo" />
-    <h1>כניסה לקופת הגמ"ח</h1>
+<img [src]="getLogoPath()" alt="לוגו הגמ&quot;ח" class="gmach-logo" />
+    <h1 class="gmach-name">{{ institution.name }}-התחברות</h1>
     <div class="sub">
       משתמש חדש? <a routerLink="/register">להרשמה לחץ כאן</a>
     </div>

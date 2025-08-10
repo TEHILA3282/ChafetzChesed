@@ -26,11 +26,10 @@ export const routes: Routes = [
   { path: 'account', component: AccountActionsComponent, canActivate: [AuthGuard,PendingGuard] },
   { path: 'deposit', component: DepositComponent , canActivate: [AuthGuard] },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard, AdminGuard] },
-  { path: 'awaiting-approval', component: AwaitingApprovalComponent },
+  { path: 'awaiting-approval', component: AwaitingApprovalComponent,canActivate: [AuthGuard]  },
   { path: 'update-details', component: UpdateDetailsComponent,canActivate: [AuthGuard] },
-  { path: 'deposit/:id', component: DepositComponent },
-  { path: 'deposits', component: DepositListComponent },
+  { path: 'deposit/:id', component: DepositComponent , canActivate: [AuthGuard]  },
+  { path: 'deposits', component: DepositListComponent , canActivate: [AuthGuard] },
   { path: 'loan/:id', component: LoanComponent },
   {path: 'loans-list', component:LoansListComponent}
-
 ];
