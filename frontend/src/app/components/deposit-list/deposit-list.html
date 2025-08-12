@@ -12,5 +12,15 @@
       <p>{{ deposit.description }}</p>
       <button class="circle-btn"><span class="arrow">⬅</span></button>
     </div>
+    <div class="card" (click)="goToDepositFreeze()">
+    <h3>הקפאת תשלומי הפקדה</h3>
+    <p>בקשה להקפאת תשלומים</p>
+    <button class="circle-btn"><span class="arrow">⬅</span></button>
+  </div>
+   <div class="card" (click)="goToDepositWithdraw()">
+    <h3>משיכת הפקדה</h3>
+    <p>בקשה למשיכת הפקדה</p>
+    <button class="circle-btn"><span class="arrow">⬅</span></button>
+  </div>
   </div>
 </div>

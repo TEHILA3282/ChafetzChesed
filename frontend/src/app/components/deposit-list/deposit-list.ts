@@ -24,7 +24,12 @@ ngOnInit() {
   });
 }
 
-
+goToDepositFreeze() {
+  this.router.navigate(['/deposit-freeze']);
+}
+goToDepositWithdraw() {
+  this.router.navigate(['/deposit-withdraw']);
+}
   goToDeposit(deposit: DepositType) {
     this.router.navigate(['/deposit', deposit.id]);
   }

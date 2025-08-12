@@ -15,6 +15,8 @@ import {PendingGuard}from './guards/pending.guard'
 import { UpdateDetailsComponent } from './components/update-details/update-details';
 import { LoanComponent } from './components/loan/loan';
 import { LoansListComponent } from './components/loans-list/loans-list';
+import { DepositFreezeComponent } from './components/deposit-freeze/deposit-freeze';
+import { DepositWithdrawComponent } from './components/deposit-withdraw/deposit-withdraw';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -31,6 +33,10 @@ export const routes: Routes = [
   { path: 'deposit/:id', component: DepositComponent },
   { path: 'deposits', component: DepositListComponent },
   { path: 'loan/:id', component: LoanComponent },
-  {path: 'loans-list', component:LoansListComponent}
+  {path: 'loans-list', component:LoansListComponent},
+  { path: 'deposit-freeze', component: DepositFreezeComponent },
+  { path: 'deposit-withdraw', component: DepositWithdrawComponent },
+
+
 
 ];
