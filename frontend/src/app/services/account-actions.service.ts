@@ -9,6 +9,13 @@ export interface AccountAction {
   important: number;
 }
 
+export interface UserSummary {
+  totalLoans: number;
+  totalRepayments: number;
+  totalDeposits: number;
+  totalDonations: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,5 +26,13 @@ export class AccountActionsService {
 
   getAllActions(): Observable<AccountAction[]> {
     return this.http.get<AccountAction[]>(this.apiUrl);
+  }
+
+  getUserSummary(): Observable<UserSummary> {
+    return this.http.get<UserSummary>(`${environment.apiUrl}/users/account-summary`);
+  }
+
+  getSummaryByUserId(userId: string): Observable<UserSummary> {
+    return this.http.get<UserSummary>(`${this.apiUrl}/summary/${userId}`);
   }
 }

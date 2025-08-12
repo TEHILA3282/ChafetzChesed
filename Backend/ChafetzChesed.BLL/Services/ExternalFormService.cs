@@ -1,9 +1,6 @@
 ﻿using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.Common.Models;
-using System.Net.Http;
 using System.Net.Http.Json;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
 namespace ChafetzChesed.BLL.Services

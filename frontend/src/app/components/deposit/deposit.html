@@ -8,7 +8,7 @@
     <span class="highlight">, {{ depositType.description }}</span>
   </p>
 
-  <form (ngSubmit)="onSubmit()" dir="rtl">
+  <form #depositForm="ngForm" (ngSubmit)="onSubmit(depositForm)" dir="rtl">
     <div class="form-wrapper">
 
       <mat-form-field appearance="fill" style="width: 100%;">
@@ -27,42 +27,40 @@
         <mat-radio-button value="automatic">הפקדה אוטומטית על ידי הגמ״ח</mat-radio-button>
       </mat-radio-group>
 
+      <div *ngIf="depositMethod === 'automatic'" style="margin-top: 1rem;">
+        <p>הפקדה בתאריך*</p>
+        <mat-radio-group [(ngModel)]="automaticDepositDateChoice" name="automaticDepositDateChoice" required>
+          <mat-radio-button value="immediate">מיידי</mat-radio-button>
+          <mat-radio-button value="other">תאריך אחר</mat-radio-button>
+        </mat-radio-group>
 
-    <div *ngIf="depositMethod === 'automatic'" style="margin-top: 1rem;">
-      <p>הפקדה בתאריך*</p>
-      <mat-radio-group [(ngModel)]="automaticDepositDateChoice" name="automaticDepositDateChoice" required>
-        <mat-radio-button value="immediate">מיידי</mat-radio-button>
-        <mat-radio-button value="other">תאריך אחר</mat-radio-button>
-      </mat-radio-group>
+        <div *ngIf="automaticDepositDateChoice === 'other'" style="margin-top: 1rem;">
+          <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>בחר תאריך</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="otherDate" name="otherDate" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-      <div *ngIf="automaticDepositDateChoice === 'other'" style="margin-top: 1rem;">
+        <p>אופן התשלום*</p>
         <mat-form-field appearance="fill" style="width: 100%;">
-          <mat-label>בחר תאריך</mat-label>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="otherDate" name="otherDate" />
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-label>בחר אופן תשלום</mat-label>
+          <mat-select [(ngModel)]="paymentMethod" name="paymentMethod" [required]="depositMethod === 'automatic'">
+            <mat-option value="existing">הו״ק קיימת בקופת הגמ״ח</mat-option>
+            <mat-option value="new">חתימה על הוראת קבע חדשה</mat-option>
+            <mat-option value="credit_existing">גביה באשראי המופיע בקופת הגמ״ח</mat-option>
+            <mat-option value="credit_other">גביה מאשראי אחר</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
 
-      <p>אופן התשלום*</p>
-      <mat-form-field appearance="fill" style="width: 100%;">
-        <mat-label>בחר אופן תשלום</mat-label>
-        <mat-select [(ngModel)]="paymentMethod" name="paymentMethod" required>
-          <mat-option value="existing">הו״ק קיימת בקופת הגמ״ח</mat-option>
-          <mat-option value="new">חתימה על הוראת קבע חדשה</mat-option>
-          <mat-option value="credit_existing">גביה באשראי המופיע בקופת הגמ״ח</mat-option>
-          <mat-option value="credit_other">גביה מאשראי אחר</mat-option>
-        </mat-select>
-      </mat-form-field>
+      <div class="submit-wrapper">
+        <button mat-raised-button color="primary" type="submit">
+          שליחה
+        </button>
+      </div>
+
     </div>
-
-    <div class="submit-wrapper">
-  <button mat-raised-button color="primary" type="submit">
-    שליחה
-  </button>
-</div>
-
-        </div>
-
   </form>
 </div>

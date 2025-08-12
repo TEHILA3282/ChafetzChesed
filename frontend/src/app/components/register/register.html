@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>הרשמה לקופת הגמ"ח</h1>
+    <h1 class="gmach-name">{{ institution.name }}-הרשמה</h1>
   <p class="sub">משתמש קיים? <a href="/login">לחץ להתחברות</a></p>
 </div>
 
@@ -7,7 +7,6 @@
   <mat-card>
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="form-grid">
-        <!-- שם פרטי -->
         <mat-form-field>
           <mat-label>שם פרטי</mat-label>
           <input matInput formControlName="FirstName" required />
@@ -15,7 +14,6 @@
           <mat-error *ngIf="form.get('FirstName')?.hasError('pattern')">הכנס שם חוקי בלבד</mat-error>
         </mat-form-field>
 
-        <!-- שם משפחה -->
         <mat-form-field>
           <mat-label>שם משפחה</mat-label>
           <input matInput formControlName="LastName" required />
@@ -23,7 +21,6 @@
           <mat-error *ngIf="form.get('LastName')?.hasError('pattern')">הכנס שם חוקי בלבד</mat-error>
         </mat-form-field>
 
-        <!-- ת"ז -->
         <mat-form-field>
           <mat-label>תעודת זהות</mat-label>
           <input matInput formControlName="ID" required />
@@ -31,7 +28,6 @@
           <mat-error *ngIf="form.get('ID')?.hasError('pattern')">מספר ת"ז לא תקין</mat-error>
         </mat-form-field>
 
-        <!-- טלפונים -->
         <mat-form-field>
           <mat-label>טלפון</mat-label>
           <input matInput formControlName="PhoneNumber" />
@@ -44,7 +40,6 @@
           <mat-error *ngIf="form.get('LandlineNumber')?.hasError('pattern')">מספר נייד לא תקין</mat-error>
         </mat-form-field>
 
-        <!-- מייל -->
         <mat-form-field>
           <mat-label>אימייל</mat-label>
           <input matInput formControlName="Email" required />
@@ -52,7 +47,6 @@
           <mat-error *ngIf="form.get('Email')?.hasError('email')">כתובת אימייל לא תקינה</mat-error>
         </mat-form-field>
 
-        <!-- סטטוס אישי -->
         <mat-form-field>
           <mat-label>סטטוס</mat-label>
           <mat-select formControlName="PersonalStatus" required>
@@ -61,7 +55,6 @@
           <mat-error *ngIf="form.get('PersonalStatus')?.hasError('required')">יש לבחור סטטוס</mat-error>
         </mat-form-field>
 
-        <!-- תאריך לידה -->
         <mat-form-field>
           <mat-label>תאריך לידה</mat-label>
           <input matInput [matDatepicker]="picker" formControlName="DateOfBirth" required />
@@ -71,7 +64,6 @@
           <mat-error *ngIf="form.get('DateOfBirth')?.hasError('futureDate')">תאריך לא יכול להיות בעתיד</mat-error>
         </mat-form-field>
 
-        <!-- עיר, רחוב, בית -->
         <mat-form-field>
           <mat-label>עיר</mat-label>
           <input matInput formControlName="City" required />
@@ -93,7 +85,6 @@
           <mat-error *ngIf="form.get('HouseNumber')?.hasError('pattern')">מספר בית לא תקין</mat-error>
         </mat-form-field>
 
-        <!-- סיסמה -->
         <mat-form-field>
           <mat-label>סיסמה</mat-label>
           <input matInput type="password" formControlName="Password" required />
@@ -102,7 +93,6 @@
           <mat-error *ngIf="form.get('Password')?.hasError('pattern')">יש לכלול אותיות וספרות</mat-error>
         </mat-form-field>
 
-        <!-- אימות סיסמה -->
         <mat-form-field>
           <mat-label>אימות סיסמה</mat-label>
           <input matInput type="password" formControlName="ConfirmPassword" required />

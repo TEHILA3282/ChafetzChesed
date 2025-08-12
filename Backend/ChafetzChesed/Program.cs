@@ -2,20 +2,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
-using ChafetzChesed;
 using ChafetzChesed.BLL.Interfaces;
 using ChafetzChesed.BLL.Services;
 using ChafetzChesed.DAL.Data;
 using ChafetzChesed.Common;
 using System.IdentityModel.Tokens.Jwt;
+using ChafetzChesed.Middleware;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// טעינת הגדרות JWT
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 var jwtSettings = builder.Configuration.GetSection("Jwt").Get<JwtSettings>();
 
-// הגדרת אימות JWT עם שם משתמש מתוך claim בשם "sub"
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -32,13 +31,12 @@ builder.Services.AddAuthentication(options =>
         ValidIssuer = jwtSettings.Issuer,
         ValidAudience = jwtSettings.Audience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key)),
-
-        // 💥 שורה קריטית: ת"ז תישלף מתוך claim בשם "sub"
         NameClaimType = JwtRegisteredClaimNames.Sub
     };
 });
 
-// CORS לאנגולאר
+builder.Services.AddAuthorization();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowLocalhost4200", policy =>
@@ -49,10 +47,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// שירותים חיצוניים
 builder.Services.AddHttpClient();
-
-// רישום שירותים
 builder.Services.AddScoped<IRegistrationService, RegistrationService>();
 builder.Services.AddScoped<IDepositTypeService, DepositTypeService>();
 builder.Services.AddScoped<ILoanTypeService, LoanTypeService>();
@@ -62,7 +57,6 @@ builder.Services.AddScoped<IExternalFormService, ExternalFormService>();
 builder.Services.AddScoped<IExternalUserSyncService, ExternalUserSyncService>();
 builder.Services.AddScoped<JwtService>();
 
-// חיבור למסד הנתונים
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -70,9 +64,37 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     )
 );
 
-builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ChafetzChesed API", Version = "v1" });
+
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "נא להזין את ה־JWT Token (רק את הטוקן, בלי המילה Bearer)"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -84,6 +106,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowLocalhost4200");
+app.UseMiddleware<JwtMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

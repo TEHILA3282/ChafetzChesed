@@ -1,6 +1,13 @@
 import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+  AbstractControl,
+  ValidationErrors
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -15,7 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegistrationService } from '../../services/registration.service';
-import { InstitutionService } from '../../services/institution.service';
+import { InstitutionService, InstitutionConfig } from '../../services/institution.service';
 
 @Component({
   selector: 'app-register',
@@ -45,41 +52,47 @@ export class Register {
   form: FormGroup;
   statuses = ['רווק/ה', 'נשוי/ה', 'גרוש/ה', 'אלמן/ה'];
   errorMessage: string = '';
+  institution: InstitutionConfig;
 
   constructor(
     private fb: FormBuilder,
     private registrationService: RegistrationService,
     private authService: AuthService,
     private router: Router,
-    private institutionService: InstitutionService,
-
+    private institutionService: InstitutionService
   ) {
- const institutionId = this.institutionService.getInstitutionId();
+    this.institution = this.institutionService.getInstitution();
+    const institutionId = this.institution.id;
 
-
-    this.form = this.fb.group({
-      FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
-      LastName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
-      ID: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]],
-    PhoneNumber:  ['', [Validators.pattern(/^\d{9}$/)]],
-    LandlineNumber: ['', [Validators.pattern(/^\d{10}$/)]],
-      Email: ['', [Validators.required, Validators.email]],
-      Role: ['User'],
-      DateOfBirth: ['', [Validators.required, this.noFutureDateValidator]],
-      PersonalStatus: ['', Validators.required],
-      City: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
-      Street: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
-      HouseNumber: ['', [Validators.required, Validators.pattern(/^\d+[א-ת]?[a-zA-Z]?$/)]],
-      Password: ['', [
-        Validators.required,
-        Validators.minLength(8),
-        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/)
-      ]],
-      ConfirmPassword: ['', Validators.required],
-      RegistrationStatus: ['ממתין'],
-      StatusUpdatedAt: [new Date()],
-      InstitutionId: [institutionId]
-    }, { validators: this.passwordsMatchValidator });
+    this.form = this.fb.group(
+      {
+        FirstName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
+        LastName: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]{2,}$/)]],
+        ID: ['', [Validators.required, Validators.pattern(/^\d{8,9}$/)]],
+        PhoneNumber: ['', [Validators.pattern(/^\d{9}$/)]],
+        LandlineNumber: ['', [Validators.pattern(/^\d{10}$/)]],
+        Email: ['', [Validators.required, Validators.email]],
+        Role: ['User'],
+        DateOfBirth: ['', [Validators.required, this.noFutureDateValidator]],
+        PersonalStatus: ['', Validators.required],
+        City: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
+        Street: ['', [Validators.required, Validators.pattern(/^[\u0590-\u05FFa-zA-Z\s'-]+$/)]],
+        HouseNumber: ['', [Validators.required, Validators.pattern(/^\d+[א-ת]?[a-zA-Z]?$/)]],
+        Password: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(8),
+            Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/)
+          ]
+        ],
+        ConfirmPassword: ['', Validators.required],
+        RegistrationStatus: ['ממתין'],
+        StatusUpdatedAt: [new Date()],
+        InstitutionId: [institutionId]
+      },
+      { validators: this.passwordsMatchValidator }
+    );
   }
 
   noFutureDateValidator(control: AbstractControl): ValidationErrors | null {
@@ -102,7 +115,8 @@ export class Register {
 
     const { ConfirmPassword, ...formData } = this.form.value;
 
-    this.registrationService.checkEmailOrIdExists(formData.Email, formData.ID, formData.InstitutionId)
+    this.registrationService
+      .checkEmailOrIdExists(formData.Email, formData.ID, formData.InstitutionId)
       .subscribe({
         next: (exists: boolean) => {
           if (exists) {

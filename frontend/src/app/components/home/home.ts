@@ -16,4 +16,8 @@ export class HomeComponent {
   constructor(private institutionService: InstitutionService) {
     this.institution = this.institutionService.getInstitution();
   }
+  getLogoPath(): string {
+  const logo = this.institutionService.getInstitution().logo;
+  return logo.startsWith('http') ? logo : `/assets/${logo}`;
+}
 }

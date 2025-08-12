@@ -1,18 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChafetzChesed.DAL.Entities
 {
     public class Message
     {
-        public int ID { get; set; }
-        public string ClientID { get; set; } = null!; // קישור ל-Registration
-        public string MessageType { get; set; } = null!; // 'מערכת' או 'גביה'
-        public string MessageText { get; set; } = null!;
-        public DateTime DateSent { get; set; }
-        public bool IsRead { get; set; }
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public string Zeout { get; set; } = string.Empty;
+
+        [Required]
+        public int InstitutionId { get; set; }
+
+        [Required]
+        public int Seder { get; set; }
+
+        [Required]
+        public string Perut { get; set; } = string.Empty;
+
+        [Required]
+        public int Important { get; set; }
+
+        [Required]
+        public DateTime CreatedAt { get; set; }
+
+        [ForeignKey(nameof(Zeout))]
+        public Registration? Registration { get; set; }
     }
 }
+

@@ -1,44 +1,34 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { MessageService, Message } from '../../services/message.service';
 import { AuthService } from '../../services/auth.service';
-import { Subscription, filter } from 'rxjs';
+import { Message } from '../../services/message.service';
 
 @Component({
   selector: 'app-messages-box',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './messages-box.html',
   styleUrls: ['./messages-box.scss']
 })
-export class MessagesBoxComponent implements OnInit, OnDestroy {
-  messages: Message[] = [];
-  private tokenSub: Subscription | undefined;
+export class MessagesBoxComponent implements OnInit {
+  publicMessages: Message[] = [];
+  privateMessages: Message[] = [];
 
-  constructor(
-    private messageService: MessageService,
-    private authService: AuthService
-  ) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.tokenSub = this.authService.getTokenObservable()
-      .pipe(filter(token => !!token))
-      .subscribe(() => this.loadMessages());
+    const messages = this.authService.getMessages();
+    this.publicMessages = messages.filter(m => m.seder === 1);
+    this.privateMessages = messages.filter(m => m.seder === 7);
+  }
 
-    if (this.authService.getToken()) {
-      this.loadMessages();
+  getClass(important: number): string {
+    switch (important) {
+      case 1: return 'bold';
+      case 3: return 'red';
+      case 4: return 'blue';
+      case 5: return 'green';
+      default: return '';
     }
-  }
-
-  loadMessages(): void {
-    this.messageService.getMessages().subscribe({
-      next: (data: Message[]) => this.messages = data,
-      error: (err: any) => console.error('שגיאה בטעינת הודעות:', err)
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.tokenSub?.unsubscribe();
   }
 }

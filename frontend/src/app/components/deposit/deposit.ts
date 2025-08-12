@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -8,8 +8,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DepositTypeService, DepositType } from '../../services/deposit-type.service';
+import { DepositService, CreateDepositDto } from '../../services/deposit.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-deposit',
@@ -38,29 +40,68 @@ export class DepositComponent implements OnInit {
   paymentMethod: string | null = null;
   otherDate: Date | null = null;
 
+  isReady = false;
+
   constructor(
     private route: ActivatedRoute,
-    private depositTypeService: DepositTypeService
+    private router: Router,
+    private depositService: DepositService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.depositTypeService.getDepositTypeById(id).subscribe(type => {
-      this.depositType = type || null;
-    });
+    const idParam = this.route.snapshot.paramMap.get('id');
+    const id = Number(idParam);
+
+    if (!id || isNaN(id)) {
+      console.error(`ID שגוי או חסר בנתיב: ${idParam}`);
+      this.router.navigate(['/deposit-list']);
+      return;
+    }
+
+    const allTypes = this.authService.getDepositTypes();
+    const found = allTypes.find(t => t.id === id);
+
+    if (!found) {
+      console.error(`לא נמצא סוג הפקדה עם id = ${id}`);
+      this.router.navigate(['/deposit-list']);
+      return;
+    }
+
+    this.depositType = found;
+    this.isReady = true;
   }
 
-  onSubmit() {
-    const data = {
-      amount: this.amount,
-      largeString: this.largeString,
-      depositMethod: this.depositMethod,
-      automaticDepositDateChoice: this.automaticDepositDateChoice,
-      paymentMethod: this.paymentMethod,
-      otherDate: this.otherDate,
-      depositTypeId: this.depositType?.id,
+  onSubmit(form: NgForm) {
+    if (!this.depositType) return;
+
+    const deposit: CreateDepositDto = {
+      depositTypeId: this.depositType.id,
+      amount: this.amount !== null ? Number(this.amount) : null,
+      purposeDetails: this.largeString,
+      isDirectDeposit: this.depositMethod === 'automatic',
+      depositDate: new Date(),
+      depositReceivedDate: this.otherDate ?? new Date(),
+      paymentMethod: this.paymentMethod
     };
-    console.log('Submitted data:', data);
-    // כאן אפשר להוסיף שליחה לשרת או טיפול נוסף
+
+    this.depositService.addDeposit(deposit).subscribe({
+      next: () => {
+        alert('ההפקדה נשלחה בהצלחה!');
+
+        form.resetForm();
+        this.amount = null;
+        this.largeString = '';
+        this.depositMethod = null;
+        this.automaticDepositDateChoice = null;
+        this.paymentMethod = null;
+        this.otherDate = null;
+      },
+      error: (err: any) => {
+        console.error('שגיאה בשליחה:', err);
+        const msg = err?.error?.detail || err?.error?.title || err?.message || 'שגיאה בשליחת ההפקדה';
+        alert(msg);
+      }
+    });
   }
 }
