@@ -4,5 +4,4 @@ export interface LoanRequest {
   loanTypeId: number;
   description: string;
   isForApartment: boolean;
-  // בהמשך אפשר להוסיף גם guarantors: Guarantor[]
 }

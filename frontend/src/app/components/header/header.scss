@@ -1,66 +1,42 @@
+
+
 .navbar {
+    position: sticky;
+    z-index: 1000;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2.5rem;
-  background: linear-gradient(to left, #fff6e6, #ffffff);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 0 24px;
   font-family: 'Heebo', sans-serif;
-  color: #333;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  direction: rtl;
+  height: var(--header-h);
+  padding: 0 24px;
+  background: rgb(69, 51, 51);; border-bottom:1px solid #e9e9e9;
+  border-radius: 40px;
+  top: 10px;
 }
 
-.nav-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 
-  .hafetz-header-logo {
-    height: 48px;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  .site-title {
-    font-size: 1.3rem;
-    font-weight: 900;
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-      color: #f7941d;
-    }
-  }
-}
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
-
+  gap: 20px;
+color: #e9e9e9;
   a {
-    color: #444;
+    color: var(--ink);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
-
-    &:hover {
-      color: #f7941d;
-    }
-
+    padding-bottom: 4px;
+color: #e9e9e9;
     &.active::after {
       content: '';
       position: absolute;
-      width: 100%;
+      inset-inline-start: 0;
+      bottom: 0;
+      width: 90%;
       height: 2px;
-      background: #90ee90;
-      bottom: -5px;
-      left: 0;
+      background: #e9e9e9;
     }
   }
 }
@@ -68,33 +44,9 @@
 .auth-section {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 5px;
+  color: #e9e9e9;
 
-  a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-      color: #f7941d;
-    }
-  }
-
-  span {
-    font-size: 0.95rem;
-    color: #555;
-  }
-}
-
-
-/* Animation */
-@keyframes fadeSlideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  span { color: var(--muted); }
 }

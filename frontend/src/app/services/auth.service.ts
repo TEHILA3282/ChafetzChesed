@@ -7,6 +7,7 @@ import { AccountAction } from './account-actions.service';
 import { MessageService, Message } from './message.service';
 import { UserSummary } from './account-actions.service';
 import { DepositType } from './deposit-type.service';
+import { LoanTypeService, LoanType } from './loan-type.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +21,16 @@ export class AuthService {
   private userSummarySubject = new BehaviorSubject<UserSummary | null>(null);
   private depositTypes: DepositType[] = [];
 
+  private loanTypes: LoanType[] = [];
+  private loanTypesSubject = new BehaviorSubject<LoanType[]>([]);
+  loanTypes$ = this.loanTypesSubject.asObservable();
+
   constructor(
     private http: HttpClient,
     private router: Router,
     private zone: NgZone,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private loanTypeService: LoanTypeService
   ) {
     const savedToken = localStorage.getItem('token');
     if (savedToken) this.tokenSubject.next(savedToken);
@@ -44,10 +50,11 @@ export class AuthService {
         }
         this.tokenSubject.next(res.token);
 
-  if (res.user?.registrationStatus !== "מאושר") {
-    console.warn(' חשבון לא מאושר – לא טוענים מידע נוסף');
-    return;
-  }
+        if (res.user?.registrationStatus !== 'מאושר') {
+          console.warn('חשבון לא מאושר – לא טוענים מידע נוסף');
+          return;
+        }
+
         setTimeout(() => {
           this.http.get<AccountAction[]>(`${this.apiUrl}/users/account-actions`).subscribe({
             next: actions => this.setAccountActions(actions),
@@ -60,12 +67,17 @@ export class AuthService {
           });
 
           this.http.get<DepositType[]>(`${this.apiUrl}/DepositTypes`).subscribe({
-  next: (types) => {
-    this.depositTypes = types;
-  },
-  error: err => console.warn('שגיאה בטעינת סוגי הפקדות:', err)
-});
+            next: (types) => { this.depositTypes = types; },
+            error: err => console.warn('שגיאה בטעינת סוגי הפקדות:', err)
+          });
 
+          this.loanTypeService.getLoanTypes().subscribe({
+            next: (types) => { 
+              this.loanTypes = types;
+              this.loanTypesSubject.next(types); 
+            },
+            error: err => console.warn('שגיאה בטעינת סוגי הלוואות:', err)
+          });
 
           this.http.get<UserSummary>(`${this.apiUrl}/users/account-summary`).subscribe({
             next: summary => this.setUserSummary(summary),
@@ -88,6 +100,8 @@ export class AuthService {
     this.accountActions = [];
     this.messages = [];
     this.userSummarySubject.next(null);
+    this.loanTypes = [];
+    this.loanTypesSubject.next([]); 
     this.zone.run(() => {
       this.router.navigate(['/home']);
     });
@@ -113,7 +127,6 @@ export class AuthService {
   setAccountActions(actions: AccountAction[]) {
     this.accountActions = actions;
   }
-
   getAccountActions(): AccountAction[] {
     return this.accountActions;
   }
@@ -121,7 +134,6 @@ export class AuthService {
   setMessages(messages: Message[]) {
     this.messages = messages;
   }
-
   getMessages(): Message[] {
     return this.messages;
   }
@@ -129,12 +141,15 @@ export class AuthService {
   setUserSummary(summary: UserSummary) {
     this.userSummarySubject.next(summary);
   }
-
   getUserSummary(): Observable<UserSummary | null> {
     return this.userSummarySubject.asObservable();
   }
-  getDepositTypes(): DepositType[] {
-  return this.depositTypes;
-}
 
+  getDepositTypes(): DepositType[] {
+    return this.depositTypes;
+  }
+
+  getLoanTypes(): LoanType[] {
+    return this.loanTypes;
+  }
 }

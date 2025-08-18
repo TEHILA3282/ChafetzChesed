@@ -1,19 +1,12 @@
 <div class="home-container">
-  <main class="main animated-fade-in">
+  <main class="main">
     <div class="title-container">
-    <img [src]="getLogoPath()" alt="לוגו הגמ&quot;ח" class="gmach-logo" />
-      <div class="titles">
-        <h1 class="gmach-name">{{ institution.name }}</h1>
-      </div>
+      <img [src]="getLogoPath()" alt="לוגו הגמ&quot;ח" class="gmach-logo" />
+      <h1 class="gmach-name">{{ institution.name }}</h1>
     </div>
 
     <app-home-main-section></app-home-main-section>
   </main>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <span>מופעל על ידי:</span>
-      <img src="hafetzLogo.png" alt="חפץ חסד לוגו" class="hafetz-logo" />
-    </div>
-  </footer>
+
 </div>

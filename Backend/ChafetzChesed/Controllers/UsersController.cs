@@ -50,7 +50,6 @@ namespace ChafetzChesed.Controllers
 
             return Ok(actions);
         }
-
         [HttpGet("account-actions/summary/{userId}")]
         public async Task<IActionResult> GetAccountSummaryByUserId(string userId)
         {
@@ -101,7 +100,6 @@ namespace ChafetzChesed.Controllers
 
             return Ok(summary);
         }
-
 
         [HttpGet("messages")]
         [Authorize]

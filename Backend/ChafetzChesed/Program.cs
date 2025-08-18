@@ -9,6 +9,8 @@ using ChafetzChesed.Common;
 using System.IdentityModel.Tokens.Jwt;
 using ChafetzChesed.Middleware;
 using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -95,6 +97,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(o =>
+{
+    o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
+builder.Services.AddScoped<IFreezeRequestService, FreezeRequestService>();
+
 
 var app = builder.Build();
 

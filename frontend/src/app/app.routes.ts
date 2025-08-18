@@ -15,7 +15,7 @@ import {PendingGuard}from './guards/pending.guard'
 import { UpdateDetailsComponent } from './components/update-details/update-details';
 import { LoanComponent } from './components/loan/loan';
 import { LoansListComponent } from './components/loans-list/loans-list';
-
+import {FreezeRequestComponent} from './components/payments-freeze/payments-freeze'
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -30,6 +30,8 @@ export const routes: Routes = [
   { path: 'update-details', component: UpdateDetailsComponent,canActivate: [AuthGuard] },
   { path: 'deposit/:id', component: DepositComponent , canActivate: [AuthGuard]  },
   { path: 'deposits', component: DepositListComponent , canActivate: [AuthGuard] },
-  { path: 'loan/:id', component: LoanComponent },
-  {path: 'loans-list', component:LoansListComponent}
+  { path: 'loan/:id', component: LoanComponent , canActivate: [AuthGuard] },
+  {path: 'loans-list', component:LoansListComponent, canActivate: [AuthGuard] },
+    {path: 'payments-freeze', component:FreezeRequestComponent, canActivate: [AuthGuard] }
+
 ];

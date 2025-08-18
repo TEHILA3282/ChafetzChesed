@@ -15,7 +15,9 @@ namespace ChafetzChesed.Middleware
         public JwtMiddleware(RequestDelegate next, IConfiguration configuration)
         {
             _next = next;
-            _jwtSettings = configuration.GetSection("Jwt").Get<JwtSettings>();
+            _jwtSettings = configuration.GetSection("Jwt").Get<JwtSettings>()
+                ?? throw new InvalidOperationException("Missing Jwt settings in configuration (section 'Jwt').");
+
         }
 
         public async Task Invoke(HttpContext context, IRegistrationService registrationService)
@@ -29,6 +31,7 @@ namespace ChafetzChesed.Middleware
                 path.StartsWith("/swagger") ||
                 path.StartsWith("/favicon") ||
                 path.StartsWith("/api/deposittypes") ||
+                path.StartsWith("/api/loantypes") ||
                 path.StartsWith("/index.html")
             ))
             {

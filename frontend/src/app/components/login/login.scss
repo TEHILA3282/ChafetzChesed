@@ -1,29 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+}
+
 .login-page {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #fffefb, #fffaf2);
+  position: fixed;
+  top: 0;  
+  left: 0;
+  right: 0;
+  bottom: 0;           
+  display: grid;
+  place-items: center;   
   direction: rtl;
-  padding: 0 1rem;
-  
+  padding: 16px;        
+  box-sizing: border-box;
+  overflow: hidden;  
+   
 }
 
 .login-card {
+  margin: 0;
+  width: min(420px, 92vw);
   background-color: #fffefb;
   border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  max-width: 420px;
-  width: 50%;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 55px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  padding: 2rem;
+      text-align: center;
+        border: 1px solid  rgb(69, 51, 51);
+position: absolute;
+top: 14%;
+ 
 
   .logo {
     width: 80px;
     height: auto;
     margin-bottom: 1rem;
+      justify-content: center;
+
   }
 
   h1 {
@@ -34,10 +49,11 @@
 
   .sub {
     margin-bottom: 1.5rem;
-    color: #4caf50;
+    color: rgb(69, 51, 51);
+;
 
     a {
-      color: #388e3c;
+      color:  rgb(69, 51, 51);
       text-decoration: underline;
       font-weight: 500;
     }
@@ -57,7 +73,7 @@
     }
 
     .error-message {
-      color: red;
+      color:  rgb(69, 51, 51);
       text-align: center;
       font-weight: bold;
     }
@@ -87,7 +103,7 @@
   }
 
   &.mat-focused {
-    box-shadow: 0 0 0 2px #4caf50;
+    box-shadow: 0 0 0 2px  rgb(69, 51, 51);
   }
 
   input::placeholder {
@@ -99,6 +115,7 @@
     margin-left: 0.25rem;
   }
 }
+
 .gmach-logo {
-  height: 35px;
+  height: 90px;
 }

@@ -5,6 +5,8 @@ using ChafetzChesed.Common.Models;
 using ChafetzChesed.Common.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using ChafetzChesed.DAL.Data;
+using ChafetzChesed.Common.Utilities;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChafetzChesed.Controllers
 {
@@ -97,6 +99,7 @@ namespace ChafetzChesed.Controllers
 
             return Ok(new { message = "הסטטוס עודכן בהצלחה" });
         }
+
         //[HttpGet("test-local")]
         //public IActionResult TestLocal()
         //{

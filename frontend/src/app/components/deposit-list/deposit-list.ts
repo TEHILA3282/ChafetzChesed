@@ -27,6 +27,11 @@ export class DepositListComponent implements OnInit {
   }
 
  goToDeposit(deposit: DepositType) {
+    const isFreezeByName = (deposit.name || '').trim() ==='בקשה להקפאת תשלומים'
+   if (isFreezeByName) {
+  this.router.navigate(['/payments-freeze'], { queryParams: { type: 'deposit' } });
+  return;
+}
   if (!deposit?.id) {
     console.error('ID לא קיים בהפקדה');
     return;

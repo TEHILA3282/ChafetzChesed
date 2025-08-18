@@ -9,7 +9,7 @@
     <div class="info-box" (click)="goTo('/programs')">
       <mat-icon class="icon">volunteer_activism</mat-icon>
       <div class="info-title">תוכניות ושותפים</div>
-      <div class="info-sub">תכניות נישואי ילדים,<br />הפקדות, שותפים והלוואות</div>
+      <div class="info-sub">תכניות נישואי ילדים<br />הפקדות, שותפים והלוואות</div>
     </div>
 
     <div class="info-box" (click)="goTo('/contact')">
@@ -23,7 +23,6 @@
     <input
       type="text"
       [(ngModel)]="searchTerm"
-      (input)="onSearch()"
       (keyup.enter)="onSearch()"
       placeholder="מה תרצה לחפש היום?"
     />
@@ -31,4 +30,8 @@
       <mat-icon>search</mat-icon>
     </button>
   </div>
+</div>
+<div class="made-by-inline">
+  <span>מופעל על ידי:</span>
+  <img src="hafetzLogo.png" alt="חפץ חסד לוגו" />
 </div>
