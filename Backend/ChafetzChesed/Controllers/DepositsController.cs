@@ -9,7 +9,6 @@ namespace ChafetzChesed.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class DepositsController : ControllerBase
     {
         private readonly IDepositService _service;

@@ -1,70 +1,29 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden; 
-}
-.home-container {
- height: calc(100vh - 80px);
-   display: flex;
+.home-container{
+  position: fixed;
+  top:0;     
+  left: 0;
+  right: 0;
+  bottom: var(--footer-h);  
+  overflow: hidden;        
+  display: flex;            
   flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, #fffaf0, #ffffff);
   padding: 0 20px;
-  font-family: 'Heebo', sans-serif;
-  direction: rtl;
-  text-align: center;
+  box-sizing: border-box;
 }
 
+.main{
+  transform: translateY(var(--center-lift));
+  flex: 1 1 auto;           
+  display: grid;
+  align-content: center;    
+  justify-items: center;    
+  row-gap: 16px;
 
-.main {
-  flex-grow: 1;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
+.title-container{ display:flex; align-items:center; gap:12px; margin:0 0 10px 0; }
+.gmach-logo{ height: 80px;   mix-blend-mode: multiply; image-rendering: -webkit-optimize-contrast; }  
+.gmach-name{ margin:0; font-weight:800; font-size: clamp(28px, 2.6vw, 42px); }
 
-.gmach-logo {
-  height: 70px;
-}
 
-.gmach-name {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0;
-}
 
-.footer {
-  flex-shrink: 0;
-  background-color: #f2f2f2;
-  border-top: 2px solid #d1d1d1;
-  padding: 1.2rem 0;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-.hafetz-logo {
-  height: 40px;
-  padding: 4px 8px;
-  background-color: white;
-  border-radius: 6px;
-}

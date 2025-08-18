@@ -10,7 +10,7 @@
 
 .subtitle {
   font-size: 1.2rem;
-  color: #444;
+  color:  rgb(69, 51, 51);
 }
 
 .loan-container {
@@ -19,7 +19,7 @@
   padding: 2rem;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px  rgb(69, 51, 51);
 }
 
 .apartment-details {
@@ -27,18 +27,19 @@
   padding: 1rem;
   background: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px  rgb(69, 51, 51);
   text-align: center;
 
   p {
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: #333;
+    color:  rgb(69, 51, 51);
   }
 
   mat-checkbox {
     display: block;
     margin-top: 1rem;
+    color:  rgb(69, 51, 51);
   }
 }
 .guarantors-grid {
@@ -51,4 +52,5 @@
 .submit-wrapper {
   text-align: center;
   margin-top: 2rem;
+  color:  rgb(69, 51, 51);
 }

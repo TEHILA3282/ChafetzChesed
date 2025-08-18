@@ -1,30 +1,45 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { LoanTypeService, LoanType } from '../../services/loan-type.service';
+import { AuthService } from '../../services/auth.service';
+import { LoanType } from '../../services/loan-type.service';
+import { filter, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-loans-list',
-  templateUrl: './loans-list.html',
-  styleUrls: ['./loans-list.scss'],
   standalone: true,
   imports: [CommonModule],
+  templateUrl: './loans-list.html',
+  styleUrls: ['./loans-list.scss']
 })
 export class LoansListComponent implements OnInit {
   loanTypes: LoanType[] = [];
 
   constructor(
     private router: Router,
-    private loanTypeService: LoanTypeService
+    private auth: AuthService
   ) {}
 
   ngOnInit() {
-    this.loanTypeService.getLoanTypes().subscribe(types => {
-      this.loanTypes = types;
-    });
+    const cached = this.auth.getLoanTypes();
+    if (cached && cached.length) {
+      this.loanTypes = cached;
+      return;
+    }
+
+    this.auth.loanTypes$
+      .pipe(filter(list => !!list && list.length > 0), take(1))
+      .subscribe(list => { this.loanTypes = list; });
   }
 
   goToLoan(loan: LoanType) {
+
+    const isFreezeByName = (loan.name || '').trim() ==='בקשה להקפאת תשלומים'
+    if (isFreezeByName) {
+      this.router.navigate(['/payments-freeze']);
+      return;
+    }
+
     this.router.navigate(['/loan', loan.id]);
   }
 }

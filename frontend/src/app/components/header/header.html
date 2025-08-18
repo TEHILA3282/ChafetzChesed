@@ -1,22 +1,19 @@
 <header class="navbar">
-
   <div class="auth-section">
     <ng-container *ngIf="!isLoggedIn; else loggedIn">
       <a routerLink="/login">כניסה</a> |
       <a routerLink="/register">הרשמה</a>
     </ng-container>
-
     <ng-template #loggedIn>
       <span>שלום, {{ userName }}</span> |
       <a (click)="logout()">התנתקות</a>
     </ng-template>
   </div>
 
-    <nav class="nav-links">
+  <nav class="nav-links">
+    <a (click)="goHome()">ראשי</a>
     <a routerLink="/account" routerLinkActive="active">מצב החשבון</a>
     <a routerLink="/performing-actions" routerLinkActive="active">ביצוע פעולות</a>
     <a routerLink="/messages" routerLinkActive="active">תיבת הודעות</a>
-    <a (click)="goHome()">ראשי</a>
-
   </nav>
 </header>
