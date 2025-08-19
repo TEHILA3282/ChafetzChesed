@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { RouterOutlet } from '@angular/router';   
+import { RouterOutlet } from '@angular/router';
 import { InstitutionService } from './services/institution.service';
+import { HeaderComponent } from './components/header/header'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],  
-  template: '<router-outlet></router-outlet>'
+  imports: [RouterOutlet, HeaderComponent],
+  template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent implements OnInit {
 
