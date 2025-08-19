@@ -29,7 +29,7 @@ namespace ChafetzChesed.DAL.Entities
         public string? PurposeDetails { get; set; }
         public Registration? Client { get; set; }
         public LoanType? LoanType { get; set; }
-
+        public int InstitutionId { get; set; }
         public ICollection<LoanGuarantor> Guarantors { get; set; } = new List<LoanGuarantor>();
     }
 }

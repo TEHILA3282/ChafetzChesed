@@ -4,7 +4,7 @@
 </div>
 
 <div class="loan-container">
-  <form (ngSubmit)="onSubmit()" dir="rtl" class="form-wrapper">
+<form #loanForm="ngForm" (ngSubmit)="onSubmit()" dir="rtl" class="form-wrapper">
 
     <mat-form-field appearance="fill" style="width: 100%;">
       <mat-label>על סך</mat-label>
@@ -58,15 +58,14 @@
 </app-guarantors-form>
     </div>
 
-    <div class="submit-wrapper">
       <button
-        mat-raised-button
-        color="primary"
-        type="submit"
-        [disabled]="!isBridge && isForApartment === 'yes' && !apartmentConfirmed"
-      >
-        אישור
-      </button>
-    </div>
+    class="submit-btn"
+    type="submit"
+    [disabled]="
+      loanForm.invalid ||
+      (!isBridge && isForApartment === 'yes' && !apartmentConfirmed)
+    ">
+    אישור
+  </button>
   </form>
 </div>

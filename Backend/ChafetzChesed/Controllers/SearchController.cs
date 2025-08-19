@@ -1,38 +1,32 @@
-﻿using ChafetzChesed.DAL.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using ChafetzChesed.Common.DTOs;
+using ChafetzChesed.DAL.Entities;
 using Microsoft.AspNetCore.Authorization;
-namespace ChafetzChesed.Controllers
+using Microsoft.AspNetCore.Mvc;
+using ChafetzChesed.BLL;
+
+using ChafetzChesed.BLL.Interfaces;
+
+[Authorize]
+[ApiController]
+[Route("api/[controller]")]
+public class SearchController : ControllerBase
 {
-    [Authorize]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class SearchController : ControllerBase
+    private readonly ISearchService _svc;
+    public SearchController(ISearchService svc) => _svc = svc;
+
+    [HttpGet("suggest")]
+    public async Task<ActionResult<IEnumerable<SearchResultDto>>> Suggest([FromQuery] string q, [FromQuery] int take = 10)
     {
-        private readonly AppDbContext _context;
+        var user = HttpContext.Items["User"] as Registration;
+        if (string.IsNullOrWhiteSpace(q) || user == null) return Ok(Array.Empty<SearchResultDto>());
+        return Ok(await _svc.SuggestAsync(q, user.InstitutionId, take));
+    }
 
-        public SearchController(AppDbContext context)
-        {
-            _context = context;
-        }
-
-        [HttpGet("{term}")]
-        public async Task<IActionResult> Search(string term)
-        {
-            term = term.ToLower();
-
-            var actions = await _context.AccountActions
-                .Where(a => a.Perut.ToLower().Contains(term))
-                .Select(a => new { title = a.Perut, route = "/account", type = "פעולה" })
-                .ToListAsync();
-
-            var deposits = await _context.Deposits
-                .Where(d => d.PurposeDetails != null && d.PurposeDetails.ToLower().Contains(term))
-                .Select(d => new { title = d.PurposeDetails, route = "/actions/deposit", type = "הפקדה" })
-                .ToListAsync();
-
-
-            return Ok();
-        }
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<SearchResultDto>>> Search([FromQuery] string q, [FromQuery] int take = 50)
+    {
+        var user = HttpContext.Items["User"] as Registration;
+        if (string.IsNullOrWhiteSpace(q) || user == null) return Ok(Array.Empty<SearchResultDto>());
+        return Ok(await _svc.SearchAsync(q, user.InstitutionId, take));
     }
 }

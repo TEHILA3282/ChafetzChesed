@@ -28,8 +28,13 @@ export class DepositListComponent implements OnInit {
 
  goToDeposit(deposit: DepositType) {
     const isFreezeByName = (deposit.name || '').trim() ==='בקשה להקפאת תשלומים'
+     const isFreezeByNameNumTwo = (deposit.name || '').trim() ==='בקשה למשיכת הפקדה'
    if (isFreezeByName) {
   this.router.navigate(['/payments-freeze'], { queryParams: { type: 'deposit' } });
+  return;
+}
+   if (isFreezeByNameNumTwo) {
+  this.router.navigate(['/deposit-withdraw'], { queryParams: { type: 'deposit' } });
   return;
 }
   if (!deposit?.id) {

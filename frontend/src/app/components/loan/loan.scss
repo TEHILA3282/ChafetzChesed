@@ -49,8 +49,20 @@
   width: 100%; 
 }
 
-.submit-wrapper {
-  text-align: center;
-  margin-top: 2rem;
-  color:  rgb(69, 51, 51);
+.submit-btn {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1.15em;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }

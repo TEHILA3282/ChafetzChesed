@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DepositWithdrawService } from '../../services/deposit-withdraw.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-deposit-withdraw',
@@ -11,10 +13,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class DepositWithdrawComponent {
   amount: number | null = null;
-  requestText: string = '';
+  requestText = '';
+  loading = false;
 
-  onSubmit() {
-    // כאן אפשר להוסיף שליחת הבקשה לשרת
-    alert('הבקשה נשלחה');
+  constructor(private api: DepositWithdrawService) {}
+
+  onSubmit(form: NgForm) {
+      if (form.invalid) return;
+    if (!this.amount || !this.requestText.trim() || this.loading) return;
+    this.loading = true;
+    this.api.create({ amount: this.amount, requestText: this.requestText.trim() })
+      .subscribe({
+        next: _ => {
+          alert('הבקשה נשלחה בהצלחה');
+            form.resetForm();
+        },
+        error: err => alert(err?.error || 'שגיאה בשליחה'),
+        complete: () => this.loading = false
+      });
   }
 }

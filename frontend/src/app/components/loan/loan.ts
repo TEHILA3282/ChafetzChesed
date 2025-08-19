@@ -28,12 +28,9 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 })
 export class LoanComponent implements OnInit {
   @Input() loanTypeId!: number;
-
   loanTypeTitle = '';
   subtitleText = '';
-
   isBridge = false;
-
   detailsLabel = 'פרט';
   detailsPlaceholder = '';
   detailsHelper = ''; 

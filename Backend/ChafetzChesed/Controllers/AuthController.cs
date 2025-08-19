@@ -31,28 +31,33 @@ namespace ChafetzChesed.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
-            var users = await _registrationService.GetAllAsync();
-            string hashedPassword = HashPassword(request.Password);
+            if (!HttpContext.Items.TryGetValue("InstitutionId", out var instIdObj) || instIdObj is not int institutionId || institutionId <= 0)
+                return BadRequest(new { message = "Institution is not resolved from subdomain" });
 
-            var idRaw = request.Identifier.Trim();
+            string hashedPassword = HashPassword(request.Password ?? string.Empty);
+
+            var idRaw = (request.Identifier ?? string.Empty).Trim();
             var idNoLeadingZeros = idRaw.TrimStart('0');
             var idWithPadding = idNoLeadingZeros.PadLeft(9, '0');
+
+            var users = await _registrationService.GetAllAsync();
 
             var user = users.FirstOrDefault(u =>
                 (u.Email.ToLower() == idRaw.ToLower()
                  || u.ID == idRaw
                  || u.ID == idNoLeadingZeros
-                 || u.ID == idWithPadding) &&
-                u.Password == hashedPassword &&
-                u.InstitutionId == request.InstitutionId
+                 || u.ID == idWithPadding)
+                && u.Password == hashedPassword
+                && u.InstitutionId == institutionId 
             );
 
             if (user == null)
             {
-                return Unauthorized(new { message = "אימייל, תז, סיסמה או מוסד אינם תואמים" });
+                return Unauthorized(new { message = "אימייל/ת״ז/סיסמה שגויים או שאינם שייכים למוסד הנוכחי" });
             }
 
             var role = string.IsNullOrEmpty(user.Role) ? "User" : user.Role;
+
             var token = _jwtService.GenerateToken(user.ID.ToString(), user.Email, user.InstitutionId, role);
 
             return Ok(new
@@ -72,8 +77,6 @@ namespace ChafetzChesed.Controllers
             });
         }
 
-
-
         [HttpGet("get-bank-details")]
         [Authorize]
         public async Task<IActionResult> GetBankDetails()
@@ -81,8 +84,6 @@ namespace ChafetzChesed.Controllers
             var user = GetLoggedInUser();
             if (user == null)
                 return Unauthorized("משתמש לא מאומת");
-
-            Console.WriteLine($"🔍 משתמש מחובר: {user.ID} ({user.Email})");
 
             var bankAccount = await _context.BankAccounts
                 .FirstOrDefaultAsync(b => b.RegistrationId == user.ID);
@@ -134,11 +135,9 @@ namespace ChafetzChesed.Controllers
 
         private static string HashPassword(string password)
         {
-            using (var sha256 = SHA256.Create())
-            {
-                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return Convert.ToBase64String(hashedBytes);
-            }
+            using var sha256 = SHA256.Create();
+            byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return Convert.ToBase64String(hashedBytes);
         }
     }
 }

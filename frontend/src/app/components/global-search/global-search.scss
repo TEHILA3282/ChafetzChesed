@@ -1,32 +1,3 @@
-.home-main-wrapper{
-  width: 100%;  
-  display: grid;
-  gap: 22px;
-  justify-items: center;
-}
-
-.top-bar-container{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 54px;                 
-}
-
-.info-box{
-  width: 90%;
-  padding: 18px 20px;
-  background: #fff;
-  border: 1px solid  rgb(69, 51, 51);
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
-  cursor: pointer;
-}
-
-.icon{ font-size: 25px; color: rgb(69, 51, 51); }
-.info-title{ font-weight: 800; margin-top: 8px; font-size: 1.05rem; }
-.info-sub{ font-size: .95rem; color: #666; line-height: 1.35; }
-
 .search-wrapper{
   width: min(900px, 90vw);
   position: relative;       
@@ -52,7 +23,7 @@
 
 .search-wrapper button{
   position: absolute;
-  left: 6px;                /* ← בשמאל */
+  left: 6px;                
   top: 50%;
   transform: translateY(-50%);
   width: 44px;
@@ -89,3 +60,27 @@
 .made-by-inline img{ height: 66px; background:#fff; border-radius:6px; padding:4px 8px;}
 
 
+
+
+.results-dropdown{
+  position: absolute;
+  top: 60px;              
+  right: 6px;         
+  left: 56px;           
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  z-index: 1000;
+  direction: rtl;
+   max-height: 200px;   
+  overflow-y: auto;
+}
+
+.result-item{
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.result-item:hover{
+  background:#f5f5f5;
+}

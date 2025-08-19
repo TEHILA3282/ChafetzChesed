@@ -5,7 +5,7 @@ public class LoanGuarantor
 {
     public int Id { get; set; }
     public int LoanId { get; set; }
-
+    public int InstitutionId { get; set; }
     [JsonIgnore] public Loan Loan { get; set; } = null!;
 
     public string? IdNumber { get; set; }

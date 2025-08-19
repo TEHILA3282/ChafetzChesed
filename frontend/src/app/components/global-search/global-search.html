@@ -1,0 +1,23 @@
+<div class="search-wrapper">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="onInputChange()"       
+    (keyup.enter)="onSearch()"       
+    placeholder="מה תרצה לחפש היום?"
+  />
+
+  <button (click)="onSearch()" aria-label="חפש">
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <div *ngIf="results.length" class="results-dropdown">
+    <div
+      *ngFor="let r of results"
+      class="result-item"
+      (click)="navigateTo(r)"
+    >
+      {{ r.title }}
+    </div>
+  </div>
+</div>

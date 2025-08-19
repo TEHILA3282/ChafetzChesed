@@ -75,7 +75,7 @@ export class FreezeRequestComponent implements OnInit {
 
     const { reason, acknowledged } = this.form.getRawValue();
     const payload = {
-      requestType: this.requestType(), // 'loan' | 'deposit'
+      requestType: this.requestType(), 
       reason,
       acknowledged
     };
