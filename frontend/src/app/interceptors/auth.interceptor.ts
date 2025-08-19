@@ -33,7 +33,6 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   });
     
       } else if (err.status === 401) {
-        alert("ההתחברות שלך פגה – נא להתחבר מחדש.");
         authService.logout();
         router.navigate(['/login']);
       }

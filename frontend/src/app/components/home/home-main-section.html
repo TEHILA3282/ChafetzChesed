@@ -18,18 +18,8 @@
       <div class="info-sub">תוכלו לקבל גם מענה<br />אישי דרך הטלפון</div>
     </div>
   </div>
+<app-global-search></app-global-search>
 
-  <div class="search-wrapper">
-    <input
-      type="text"
-      [(ngModel)]="searchTerm"
-      (keyup.enter)="onSearch()"
-      placeholder="מה תרצה לחפש היום?"
-    />
-    <button (click)="onSearch()" aria-label="חפש">
-      <mat-icon>search</mat-icon>
-    </button>
-  </div>
 </div>
 <div class="made-by-inline">
   <span>מופעל על ידי:</span>

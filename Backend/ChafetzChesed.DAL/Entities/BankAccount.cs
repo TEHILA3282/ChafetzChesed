@@ -3,6 +3,7 @@
     public class BankAccount
     {
         public int Id { get; set; }
+        public int InstitutionId { get; set; }
         public string RegistrationId { get; set; } 
         public string BankNumber { get; set; }
         public string BranchNumber { get; set; }

@@ -16,7 +16,6 @@ import { UpdateDetailsComponent } from './components/update-details/update-detai
 import { LoanComponent } from './components/loan/loan';
 import { LoansListComponent } from './components/loans-list/loans-list';
 import {FreezeRequestComponent} from './components/payments-freeze/payments-freeze';
-import { DepositFreezeComponent } from './components/deposit-freeze/deposit-freeze';
 import { DepositWithdrawComponent } from './components/deposit-withdraw/deposit-withdraw';
 
 export const routes: Routes = [
@@ -36,6 +35,6 @@ export const routes: Routes = [
   { path: 'loan/:id', component: LoanComponent , canActivate: [AuthGuard] },
   {path: 'loans-list', component:LoansListComponent, canActivate: [AuthGuard] },
   {path: 'payments-freeze', component:FreezeRequestComponent, canActivate: [AuthGuard] },
-  { path: 'deposit-withdraw', component: DepositWithdrawComponent },
+  { path: 'deposit-withdraw', component: DepositWithdrawComponent , canActivate: [AuthGuard]},
 
 ];

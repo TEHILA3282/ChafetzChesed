@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { GlobalSearchComponent } from '../global-search/global-search';
 
 @Component({
   selector: 'app-home-main-section',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule],
+  imports: [CommonModule, FormsModule, MatIconModule,GlobalSearchComponent],
   templateUrl: './home-main-section.html',
   styleUrls: ['./home-main-section.scss'],
 })

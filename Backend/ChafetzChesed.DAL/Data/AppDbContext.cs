@@ -18,6 +18,9 @@ namespace ChafetzChesed.DAL.Data
         public DbSet<BankAccount> BankAccounts { get; set; }
         public DbSet<LoanGuarantor> LoanGuarantors { get; set; }
         public DbSet<FreezeRequest> FreezeRequests { get; set; }
+        public DbSet<DepositWithdrawRequest> DepositWithdrawRequests { get; set; }
+        public DbSet<Institution> Institutions { get; set; } = default!;
+        public DbSet<SearchIndexItem> SearchIndexItem { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Registration>().ToTable("Registration");
@@ -61,7 +64,7 @@ namespace ChafetzChesed.DAL.Data
                 entity.Property(f => f.ID).UseIdentityColumn();
 
                 entity.Property(f => f.ClientID)
-                      .HasMaxLength(9)         // אם אצלך ב־DB 9 תווים; אחרת עדכן ל-20
+                      .HasMaxLength(9)        
                       .IsRequired();
 
                 entity.Property(f => f.InstitutionId).IsRequired();

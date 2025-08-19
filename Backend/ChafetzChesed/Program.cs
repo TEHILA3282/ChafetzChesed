@@ -10,7 +10,8 @@ using System.IdentityModel.Tokens.Jwt;
 using ChafetzChesed.Middleware;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
-
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
+using Microsoft.Extensions.Caching.Memory;  
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,7 +58,13 @@ builder.Services.AddScoped<ILoanService, LoanService>();
 builder.Services.AddScoped<IDepositService, DepositService>();
 builder.Services.AddScoped<IExternalFormService, ExternalFormService>();
 builder.Services.AddScoped<IExternalUserSyncService, ExternalUserSyncService>();
+builder.Services.AddScoped<IDepositWithdrawService, DepositWithdrawService>();
+builder.Services.AddScoped<ISearchService, SearchService>();
+
 builder.Services.AddScoped<JwtService>();
+
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<IInstitutionResolver,InstitutionResolver>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
@@ -103,7 +110,6 @@ builder.Services.AddControllers().AddJsonOptions(o =>
 });
 builder.Services.AddScoped<IFreezeRequestService, FreezeRequestService>();
 
-
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -114,7 +120,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowLocalhost4200");
+
+app.UseMiddleware<InstitutionMiddleware>();
+
 app.UseMiddleware<JwtMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
