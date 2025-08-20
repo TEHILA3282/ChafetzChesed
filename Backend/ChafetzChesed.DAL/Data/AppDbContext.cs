@@ -21,6 +21,9 @@ namespace ChafetzChesed.DAL.Data
         public DbSet<DepositWithdrawRequest> DepositWithdrawRequests { get; set; }
         public DbSet<Institution> Institutions { get; set; } = default!;
         public DbSet<SearchIndexItem> SearchIndexItem { get; set; }
+        public DbSet<ContactRequest> ContactRequests { get; set; } = null!;
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Registration>().ToTable("Registration");

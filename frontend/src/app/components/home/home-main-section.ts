@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component,inject  } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { GlobalSearchComponent } from '../global-search/global-search';
+import { ContactDialogComponent } from '../contact-dialog/contact-dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home-main-section',
@@ -13,6 +15,7 @@ import { GlobalSearchComponent } from '../global-search/global-search';
   styleUrls: ['./home-main-section.scss'],
 })
 export class HomeMainSectionComponent {
+    private dialog = inject(MatDialog);
   searchTerm: string = '';
   filteredResults: { title: string; route: string }[] = [];
 
@@ -46,4 +49,16 @@ export class HomeMainSectionComponent {
     const isLoggedIn = !!localStorage.getItem('token');
     this.router.navigate([isLoggedIn ? route : '/login']);
   }
+
+    openContact() {
+this.dialog.open(ContactDialogComponent, {
+  width: '760px',
+  maxWidth: '95vw',
+  autoFocus: false,
+  panelClass: 'contact-dialog'   
+    }).afterClosed().subscribe(ok => {
+      if (ok) {
+        alert('הטופס נשלח בהצלחה')
+      }
+    });}
 }

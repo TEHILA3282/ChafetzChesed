@@ -1,0 +1,57 @@
+<div dir="rtl" class="dialog-wrap">
+
+  <h2 class="title">יצירת קשר</h2>
+
+  <p class="hint">
+    אנו משתדלים מאוד לתת מענה לכל פניה.
+    לשיחה טלפונית אפשר להתקשר
+    <a class="phone-pill" [href]="'tel:' + (info?.phone || '03-0000000')">
+      {{ info?.phone || '03-0000000' }}
+    </a><br />
+    זמינות: {{ info?.availabilityText || 'א׳–ו׳ 09:30–10:30' }}
+  </p>
+  <p class="center-note">
+  טופס יצירת קשר זה הינו רק לצורך בעיות כניסה והרשמה לאתר, כל פעולה בגמ״ח
+  ניתן לבצע באתר בפעולות ממוקדות, במקרה וישלח טופס לביצוע פעולות לצערנו
+  לא נוכל להתייחס לפניות אלו.
+</p>
+
+  <div mat-dialog-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>שם</mat-label>
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>משפחה</mat-label>
+          <input matInput formControlName="lastName" />
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field appearance="fill">
+          <mat-label>אימייל</mat-label>
+          <input matInput type="email" formControlName="email" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>נושא</mat-label>
+          <input matInput formControlName="subject" />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill" style="width:100%">
+        <mat-label>הודעה</mat-label>
+        <textarea matInput rows="5" formControlName="message"></textarea>
+      </mat-form-field>
+
+      <div mat-dialog-actions align="end">
+        <button mat-raised-button color="primary" [disabled]="form.invalid || loading">
+          שליחה
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,6 +8,8 @@
         public string? LogoUrl { get; set; }
         public string? ThemeColor { get; set; }
         public bool IsActive { get; set; }
+        public string? ContactPhone { get; set; }   
+        public string? AvailabilityText { get; set; }
 
     }
 }
