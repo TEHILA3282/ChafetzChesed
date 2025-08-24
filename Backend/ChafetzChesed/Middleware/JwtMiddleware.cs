@@ -32,7 +32,8 @@ namespace ChafetzChesed.Middleware
                 path.StartsWith("/favicon") ||
                 path.StartsWith("/api/deposittypes") ||
                 path.StartsWith("/api/loantypes") ||
-                path.StartsWith("/index.html")
+                path.StartsWith("/index.html")||
+                path.StartsWith("/api/auth/forgot-password")
             ))
             {
                 await _next(context);
@@ -77,6 +78,9 @@ namespace ChafetzChesed.Middleware
                 var institutionIdClaim = jwtToken.Claims.FirstOrDefault(x => x.Type == "InstitutionId")?.Value;
                 int.TryParse(institutionIdClaim, out int tokenInstitutionId);
 
+                if (tokenInstitutionId > 0)
+                    context.Items["InstitutionId"] = tokenInstitutionId;
+
                 var user = await registrationService.GetByIdAsync(userId);
                 if (user == null || user.RegistrationStatus == "נדחה")
                 {
@@ -97,7 +101,7 @@ namespace ChafetzChesed.Middleware
                 var parts = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
                 if (parts.Length >= 3 && int.TryParse(parts[2], out int pathInstitutionId))
                 {
-                    if (pathInstitutionId != tokenInstitutionId)
+                    if (tokenInstitutionId > 0 && pathInstitutionId != tokenInstitutionId)
                     {
                         context.Response.StatusCode = StatusCodes.Status403Forbidden;
                         await context.Response.WriteAsync("גישה נדחתה – מוסד לא תואם לטוקן");
@@ -115,5 +119,6 @@ namespace ChafetzChesed.Middleware
                 return false;
             }
         }
+
     }
 }

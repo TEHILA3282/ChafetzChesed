@@ -15,7 +15,6 @@ html, body {
 /* 1) Theme של Angular Material (או דרך angular.json) */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* 2) עיצוב מעטפת הדיאלוג לפי ה-panelClass שהעברנו */
 .contact-dialog .mat-mdc-dialog-container .mdc-dialog__surface {
   border-radius: 18px;
   padding: 16px 16px 12px;  /* ריווח פנימי */

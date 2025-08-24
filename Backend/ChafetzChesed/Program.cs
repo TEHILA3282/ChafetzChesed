@@ -60,11 +60,11 @@ builder.Services.AddScoped<IExternalFormService, ExternalFormService>();
 builder.Services.AddScoped<IExternalUserSyncService, ExternalUserSyncService>();
 builder.Services.AddScoped<IDepositWithdrawService, DepositWithdrawService>();
 builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddScoped<ChafetzChesed.BLL.Services.EmailService>();
 
 builder.Services.AddScoped<JwtService>();
 
 builder.Services.AddMemoryCache();
-builder.Services.AddScoped<IInstitutionResolver,InstitutionResolver>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
@@ -120,8 +120,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("AllowLocalhost4200");
+app.UseMiddleware<InstitutionResolverMiddleware>();
 
-app.UseMiddleware<InstitutionMiddleware>();
 
 app.UseMiddleware<JwtMiddleware>();
 

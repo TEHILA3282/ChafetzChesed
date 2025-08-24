@@ -15,7 +15,7 @@ import { ContactService, InstitutionPublicInfo } from '../../services/contact.se
     ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule
   ],
   templateUrl: './contact-dialog.html',
-  styleUrls: ['./contact-dialog.scss']   
+  styleUrls: ['./contact-dialog.scss']
 })
 export class ContactDialogComponent implements OnInit {
   private dialogRef = inject(MatDialogRef<ContactDialogComponent>);
@@ -34,7 +34,9 @@ export class ContactDialogComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.contact.getPublicInfo().subscribe(i => this.info = i);
+this.contact.publicInfo$().subscribe((i: InstitutionPublicInfo | null) => {
+  this.info = i ?? undefined;
+});
   }
 
   async onSubmit() {

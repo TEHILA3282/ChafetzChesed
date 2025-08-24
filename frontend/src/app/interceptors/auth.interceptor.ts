@@ -12,28 +12,41 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
   const dialog = inject(MatDialog);
 
-  const token = authService.getToken();
+  let instHeaders: Record<string, string> = {};
+  try {
+    const path = (window?.location?.pathname || '').toLowerCase(); 
+    const firstSeg = path.split('/').filter(Boolean)[0];           
+    if (firstSeg && firstSeg.startsWith('gmach')) {
+      instHeaders['X-Institution-Slug'] = firstSeg;                 
+    } else {
+      instHeaders['X-Institution-Id'] = '1';                     
+    }
+  } catch {
+  }
 
+  const token = authService.getToken();
   if (token) {
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
+        ...instHeaders
       }
     });
+  } else {
+    req = req.clone({ setHeaders: { ...instHeaders } });
   }
 
   return next(req).pipe(
     catchError((err) => {
-      if (err.status === 403 && err.error?.includes("גישה נדחתה")) {
-       dialog.open(RejectedDialogComponent)
-  .afterClosed()
-  .subscribe(() => {
-    authService.logout();
-    router.navigate(['/login']);
-  });
-    
+      if (err.status === 403 && (typeof err.error === 'string') && err.error.includes('גישה נדחתה')) {
+        dialog.open(RejectedDialogComponent).afterClosed().subscribe(() => {
+          authService.logout();
+          router.navigate(['/login']);
+        });
       } else if (err.status === 401) {
         authService.logout();
+        router.navigate(['/login']);
+      } else if (err.status === 400 && err.error?.message?.includes('Institution is not resolved')) {
         router.navigate(['/login']);
       }
 

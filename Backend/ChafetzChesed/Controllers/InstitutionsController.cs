@@ -1,37 +1,38 @@
-﻿using ChafetzChesed.BLL.Services;
-using ChafetzChesed.Common.DTOs;
+﻿using ChafetzChesed.Common.DTOs;
+using ChafetzChesed.DAL.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
-namespace ChafetzChesed.Controllers
+
+[ApiController]
+[Route("api/[controller]")] 
+public class InstitutionsController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class InstitutionsController : ControllerBase
+    private readonly AppDbContext _db;
+    public InstitutionsController(AppDbContext db) => _db = db;
+
+    [HttpGet("{institutionId:int}/public-info")]
+    public ActionResult<InstitutionPublicInfoDto> GetPublicInfoById(int institutionId)
+        => ToDto(institutionId);
+
+    [HttpGet("public-info")]
+    public ActionResult<InstitutionPublicInfoDto> GetPublicInfoFromContext()
     {
-        private readonly IInstitutionResolver _resolver;
-
-        public InstitutionsController(IInstitutionResolver resolver)
-        {
-            _resolver = resolver;
-        }
-
-        [HttpGet("public-info")]
-        [AllowAnonymous]
-        public async Task<ActionResult<InstitutionPublicInfoDto>> GetPublicInfo()
-        {
-            var host = HttpContext.Request.Host.Host;
-            var sub = host.Split('.').FirstOrDefault() ?? "localhost";
-            var inst = await _resolver.GetBySubdomainAsync(sub);
-            if (inst == null) return NotFound();
-
-            return new InstitutionPublicInfoDto
-            {
-                InstitutionId = inst.ID,
-                Phone = inst.ContactPhone ?? "03-0000000",
-                AvailabilityText = inst.AvailabilityText ?? "א׳–ו׳ 09:30–10:30"
-            };
-        }
+        if (!HttpContext.Items.TryGetValue("InstitutionId", out var v) || v is not int id || id <= 0)
+            return BadRequest("Institution is not resolved");
+        return ToDto(id);
     }
 
+    private ActionResult<InstitutionPublicInfoDto> ToDto(int id)
+    {
+        var inst = _db.Institutions.AsNoTracking().FirstOrDefault(x => x.InstitutionId == id);
+        if (inst is null) return NotFound();
+
+        return Ok(new InstitutionPublicInfoDto
+        {
+            Phone = inst.ContactPhone ?? "03-0000000",
+            AvailabilityText = inst.AvailabilityText ?? "א'-ה' 09:30–10:30",
+        });
+    }
 }

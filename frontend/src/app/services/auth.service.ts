@@ -25,6 +25,8 @@ export class AuthService {
   private loanTypesSubject = new BehaviorSubject<LoanType[]>([]);
   loanTypes$ = this.loanTypesSubject.asObservable();
 
+  public isLoading = false;
+
   constructor(
     private http: HttpClient,
     private router: Router,
@@ -35,6 +37,15 @@ export class AuthService {
     const savedToken = localStorage.getItem('token');
     if (savedToken) this.tokenSubject.next(savedToken);
   }
+
+ 
+forgotPassword(identifier: string) {
+  return this.http.post<{ message: string }>(
+    `${environment.apiUrl}/auth/forgot-password`,
+    { identifier }
+  );
+}
+
 
   login(credentials: { emailOrId: string, password: string, institutionId: number }): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/login`, {
@@ -72,9 +83,9 @@ export class AuthService {
           });
 
           this.loanTypeService.getLoanTypes().subscribe({
-            next: (types) => { 
+            next: (types) => {
               this.loanTypes = types;
-              this.loanTypesSubject.next(types); 
+              this.loanTypesSubject.next(types);
             },
             error: err => console.warn('שגיאה בטעינת סוגי הלוואות:', err)
           });
@@ -101,7 +112,7 @@ export class AuthService {
     this.messages = [];
     this.userSummarySubject.next(null);
     this.loanTypes = [];
-    this.loanTypesSubject.next([]); 
+    this.loanTypesSubject.next([]);
     this.zone.run(() => {
       this.router.navigate(['/home']);
     });

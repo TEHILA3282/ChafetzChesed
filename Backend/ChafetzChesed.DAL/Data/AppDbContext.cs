@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ChafetzChesed.DAL.Entities;
-
 namespace ChafetzChesed.DAL.Data
 {
     public class AppDbContext : DbContext
@@ -19,14 +18,16 @@ namespace ChafetzChesed.DAL.Data
         public DbSet<LoanGuarantor> LoanGuarantors { get; set; }
         public DbSet<FreezeRequest> FreezeRequests { get; set; }
         public DbSet<DepositWithdrawRequest> DepositWithdrawRequests { get; set; }
-        public DbSet<Institution> Institutions { get; set; } = default!;
         public DbSet<SearchIndexItem> SearchIndexItem { get; set; }
         public DbSet<ContactRequest> ContactRequests { get; set; } = null!;
+        public DbSet<Institution> Institutions { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Registration>().ToTable("Registration");
+            modelBuilder.Entity<Institution>().ToTable("Institutions");
 
             modelBuilder.Entity<Loan>(entity =>
             {

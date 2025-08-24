@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment'; // עדכני נתיב לפי הפרויקט שלך
 
 @Component({
   selector: 'app-forgot-password',
@@ -22,10 +23,11 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
     MatSnackBarModule,
   ],
   templateUrl: './forgot-password.html',
-  styleUrl: './forgot-password.scss',
+  styleUrls: ['./forgot-password.scss'],
 })
 export class ForgotPassword {
-  emailOrUser: string = '';
+  emailOrUser = '';
+  isLoading = false;
 
   constructor(
     private dialogRef: MatDialogRef<ForgotPassword>,
@@ -34,28 +36,35 @@ export class ForgotPassword {
   ) {}
 
   sendResetLink() {
-    const email = this.emailOrUser.trim();
-    if (!email) {
-      this.snackBar.open('יש להזין כתובת אימייל', 'סגור', { duration: 3000 });
+    const identifier = this.emailOrUser.trim();
+    if (!identifier) {
+      this.snackBar.open('יש להזין אימייל או ת״ז', 'סגור', { duration: 3000 });
       return;
     }
 
-    this.http.post('https://localhost:7150/api/auth/forgot-password', email, {
-      headers: { 'Content-Type': 'application/json' },
-      responseType: 'text' 
-    }).subscribe({
-      next: () => {
-        this.snackBar.open('סיסמה חדשה נשלחה למייל שלך', 'סגור', { duration: 4000 });
-        this.dialogRef.close();
+    this.isLoading = true;
+
+    this.http.post<{ message: string }>(
+      `${environment.apiUrl}/auth/forgot-password`,
+      { identifier } 
+    ).subscribe({
+      next: (res) => {
+        this.snackBar.open(res?.message || 'סיסמה זמנית נשלחה למייל', 'סגור', { duration: 4000 });
+        this.dialogRef.close(true);
+        this.isLoading = false;
       },
       error: (err) => {
-        const msg = err.status === 404 ? 'האימייל לא נמצא במערכת' : 'שגיאה בשליחת הסיסמה';
+        const msg =
+          err?.status === 404
+            ? 'המשתמש לא נמצא במוסד הנוכחי'
+            : (err?.error?.message || 'שגיאה בשליחת הסיסמה');
         this.snackBar.open(msg, 'סגור', { duration: 4000 });
+        this.isLoading = false;
       }
     });
   }
 
   close() {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
 }
