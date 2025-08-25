@@ -21,6 +21,7 @@ namespace ChafetzChesed.DAL.Data
         public DbSet<SearchIndexItem> SearchIndexItem { get; set; }
         public DbSet<ContactRequest> ContactRequests { get; set; } = null!;
         public DbSet<Institution> Institutions { get; set; }
+        public DbSet<AuditLog> AuditLogs { get; set; }
 
 
 
@@ -97,7 +98,15 @@ namespace ChafetzChesed.DAL.Data
                     "[RequestType] IN (N'loan', N'deposit')");
             });
 
-
+            modelBuilder.Entity<AuditLog>(e =>
+            {
+                e.ToTable("AuditLog");
+                e.HasKey(x => x.ID);
+                e.HasIndex(x => new { x.InstitutionId, x.Entity, x.ID });
+                e.Property(x => x.Entity).HasMaxLength(50);
+                e.Property(x => x.EntityId).HasMaxLength(50);
+                e.Property(x => x.ChangedBy).HasMaxLength(100);
+            });
 
 
             base.OnModelCreating(modelBuilder);
