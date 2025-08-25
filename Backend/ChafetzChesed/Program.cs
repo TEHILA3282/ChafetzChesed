@@ -63,7 +63,8 @@ builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddScoped<ChafetzChesed.BLL.Services.EmailService>();
 
 builder.Services.AddScoped<JwtService>();
-
+builder.Services.Configure<List<ApiClient>>(builder.Configuration.GetSection("ApiClients"));
+builder.Services.AddScoped<IDeltaSyncService, DeltaSyncService>();
 builder.Services.AddMemoryCache();
 
 builder.Services.AddDbContext<AppDbContext>(options =>

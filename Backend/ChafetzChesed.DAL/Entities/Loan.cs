@@ -31,5 +31,7 @@ namespace ChafetzChesed.DAL.Entities
         public LoanType? LoanType { get; set; }
         public int InstitutionId { get; set; }
         public ICollection<LoanGuarantor> Guarantors { get; set; } = new List<LoanGuarantor>();
+        public bool IsDeleted { get; set; }        
+        public DateTime UpdatedAt { get; set; }
     }
 }
